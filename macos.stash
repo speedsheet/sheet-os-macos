@@ -1,0 +1,2506 @@
+# MacOS<> SpeedSheet
+<b>What you need, faster.<>
+
+Covers MacOS related topics.
+
+
+
+# Dictation
+
+
+### Diction - Start
+
+Press:
+
+<cb>Fn, Fn<>
+
+
+### Diction - End
+
+Press:
+
+<cb>Fn<>
+
+
+### Delete - Character
+
+Say
+
+<cb>"Delete That"<>
+
+
+### Delete - Last Item
+
+Say
+
+<cb>"Scratch That"<>
+
+
+### New Line
+
+Say
+
+<cb>"New Line"<>
+
+
+### New Paragraph
+
+
+# Migration
+
+
+### Migrate - Email
+
+
+#### Easy Way…
+
+Setup New Mail Boxes
+
+Then rebuild mailboxes
+	For Each Mailbox
+		Select Mailbox
+		Menu: Mailbox -> Rebuild
+
+
+#### Untested Way…	
+
+New Computer
+
+	Delete Mail Files
+		~/Library/Mail/*
+	Delete Preferences
+		~/Library/Preferences/com.apple.mail*
+
+Original Computer
+
+	Rebuild Mail Boxes
+
+	Open Mail
+
+	For Each Mailbox
+		Select Mailbox
+		Menu: Mailbox -> Rebuild
+
+	Copy
+		~/Library/Mail/*
+		~/Library/Preferences/com.apple.mail*
+
+New Computer
+
+	Copy
+		~/Library/Mail/*
+		~/Library/Preferences/com.apple.mail*
+
+	Restart
+
+
+
+### Migrate - Messages
+
+On Both Computers	Close Messenger.
+
+New Computer
+
+	Delete contents of
+		~/Library/Messages
+
+Copy
+
+	Old Computer
+		~/Library/Messages
+	To New Computer
+		~/Library/Messages
+
+New Computer
+
+	Check / Set File Permissions
+			~/Library/Messages
+
+	Check Links
+		~/Library/Containers/com.apple.ichat/Data/Library/Messages
+			Archive		-> ~/Library/Messages/Archive
+			Attachments	-> ~/Library/Messages/Attachments
+
+New Computer
+
+	Restart
+
+
+
+### Reference - Folders
+
+
+
+### Messages - Folders
+
+Primary	~/Library/Messages
+
+	Archive					// Archive messages
+	Attachments				// Message attachments (photos, videos, etc.)
+
+Archive	~/Library/Containers/com.apple.ichat/Data/Library/Messages
+
+	Archive					// Link to ~/Library/Messages/Archive
+	Attachments				// Link to ~/Library/Messages/Attachments
+
+
+
+### Messages - Files
+
+Message Database
+
+	~/Library/Messages/chat.db
+
+
+
+
+# ################# Unsorted #################################
+
+
+
+
+# Summary
+
+Path Separator	:
+
+
+
+# Desktop Apps
+
+Dashboard	Show dashboard widgets
+Expose
+Expose - Mission Control	Shows all desktops, applications.
+Finder
+Launchpad	Shows iOS style app launcher
+Terminal
+
+
+
+# System Applications
+
+Wireless Diagnostics	Wireless Icon: alt + click -> "open Wireless Diagnostics..."	(Yosemite)
+	/System/Library/CoreServices [/Applications] /Wireless Diagnostics.app
+- Wireless Scanner	Menu: windows -> Scan
+	
+
+
+# Variables
+
+Variable Name	letters, numbers, _				// Nothin else is acceptable
+
+Var - Retrieve	$varName
+
+Var - Set	varName=value
+
+	or...
+	export varName=value
+
+	(export copies the variables to all child processes running in the current shell)
+
+Global Variables	File: /etc/launchd.conf
+
+	Use setenv command
+	setting varName value
+
+
+
+# OS - Executing a Script
+
+Auto Execute Script File	File execute permission must be set.
+	The 1st line needs a hash bang comment.
+
+	Bash (default version):	#! /usr/bin/bash
+
+Run from bash (manual)	bash scriptName
+
+Run from bash (auto) 	Set Execute permission
+	Call path/scriptName
+
+	ex:
+	chmod +x scriptName
+	./scriptName			// When in the same directory use './'
+
+Run App from bash	open -a appName
+
+		-a	Opens an application.
+		-n	Opens a new instance of the application
+
+
+
+# OS - Bash
+
+Startup Script	.bash_profile			// Unlike most bash instances...
+					// This is called every time terminal is opened.
+
+md5	Returns the md5 value of a file.
+
+
+
+# OS - Environment
+
+All Environments	/etc/launchd.conf
+
+Path	
+
+
+
+# App - Dashboard
+
+Insert Spacer	? Instructions for this ???
+
+
+
+# App - Finder
+
+
+
+### File - Delete
+
+<cb>Command ⌘ + Delete<>
+
+
+Moves the file to trash.
+
+
+
+### File - Path - Copy
+
+Right Click -> Info Popup
+Option + "Copy file_name As Pathname"
+
+
+
+### Show Hidden
+
+Command ⌘ + Shift + .	
+
+
+### Show Path
+
+Menu -> Edit -> Show Path Bar
+
+
+### Show Status
+
+Bar	Menu -> Edit -> Show Status Bar
+
+
+
+### Sort - Folders Together
+
+Menu -> File -> Preferences
+Tab: Advanced
+"Keep folders on top:"
+Check: In windows when sorting by name.
+@
+@ Directories
+
+
+
+### Toolbar - Customize
+
+Toolbar -> Right Click -> Customize Toolbar...
+
+
+
+### View - Icon View - Use Full Width
+
+Sort by name.
+
+
+
+### View - Icon View - change Icon Size
+
+Show status bar.
+Use slider (bottom right).
+
+
+
+# App - Keychain
+
+login	Default for account.
+		Uses same password for account.
+
+Login keychain access	unlocked by default when logged in.
+
+Local Items	Locally saved password
+
+
+
+# App - Launchd / Launchctl
+
+What is it	A powerful tool that runs OS X tasks and jobs.
+		It is like init, cron, ta, init.d(SysVinit), upstart and systems all in one with even more.
+
+		Note: Can not be called directly.
+		Note: Use launchctl
+
+Dir - OS X Tasks	/System/Library/LaunchDaemons	// Don't touch this.
+		/System/Library/LaunchAgents	// Don't touch this either.
+Dir - System Tasks	/Library/LaunchDaemons/
+Dir - All Logged In User Tasks	/Library/LaunchAgents/
+Dir - User Specific Tasks	~/Library/LaunchAgents/
+
+Task - Add	Create a file in plist format.
+		File name: Reverse domain name notation	// com.example.task-name.plist
+
+Task - Enable	launchctl load -w path/taskName.plist
+Task - Disable	launchctl unload path/taskName.plist
+Task - Start	launchctl start path/taskName.plist
+Tasks - List	launchctl list
+
+Sample plist - Starts at Login	<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+		<plist version="1.0">
+			<dict>
+				<key>Label</key>
+				<string>com.user.loginscript</string>
+				<key>Program</key>
+				<string>/path/to/executable/script.sh</string>
+				<key>RunAtLoad</key>
+				<true/>
+			</dict>
+		</plist> 		
+
+	Key - Run all the time	<key>KeepAlive</key>
+	Key - Run At Startup	<key>RunAtLoad</key>
+
+
+
+# App - Music
+
+
+### Library - Sync
+
+Menu:
+File
+Preferences...
+General	(Tab)
+
+Check: "Library:" <v>_<> "Sync Library"
+
+
+
+# App - Safari
+
+
+### Developer Tools - Enable
+
+Preferences
+"Advanced"
+"Show Develop menu in menu bar"
+
+
+### Show Page Source
+
+Enable Developer Tools.
+
+Then
+
+Menu:
+Develop
+"Show Page Source"
+
+or
+
+<cb>Command ⌘ + Option ⌥ + U<>
+
+
+
+# App - Terminal
+
+
+### Terminal - Add Colour
+
+Add To .bash_profile
+
+<cb>export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
+
+
+
+### Terminal - Shell - Show
+
+<cb>echo ${SHELL}<>
+
+
+
+### Terminal - Shell - Set Bash
+
+<cb>chsh -s /bin/bash<>
+
+
+
+### Terminal - Shell - Set Zsh
+
+<cb>chsh -s /bin/zsh<>
+
+
+
+## Terminal Shortcuts
+@
+@ keyboard shortcut, quick keys
+
+
+### New - Tab
+
+<cb>Command ⌘ + T<>
+
+
+
+### New - Window
+
+<cb>Command ⌘ + N<>
+
+
+
+### Close
+
+<cb>Control ⌃ + D<>
+
+
+
+### Close - Tab
+
+<cb>Command ⌘ + W<>
+
+
+
+### Screen - Clear All
+
+<cb>Command ⌘ + K<>
+
+
+
+### Cursor - Delete Before
+
+<cb>Control ⌃ + U<>
+
+
+
+### Cursor - Delete After
+
+<cb>Control ⌃ + K<>
+
+
+
+### Cursor - Delete All
+
+<cb>Control ⌃ + C<>
+
+
+
+### Cursor - Move - To Start
+
+<cb>Control ⌃ + A<>
+@
+@ beginning, first
+
+
+
+### Cursor - Move - To End
+
+<cb>Control ⌃ + E<>
+@
+@ last
+
+
+
+# Shortcuts
+
+
+
+## Keyboard Icons
+
+Apple	
+Command ⌘	⌘
+Option ⌥	⌥
+Control ⌃	⌃
+Shift	⇧
+Caps Lock	⇪
+
+
+
+## Boot Keys
+
+Boot Device Selector	Option ⌥
+PRAM Reset	Option ⌥ + Command ⌘ + P + R
+Start - Bootable Device	C						// Such as CD, DVD, USB Thumb Drive
+Start - Diagnostics	D
+Start - Recovery Mode	Command ⌘ + R				// Password change, System Utils
+Start - Safe Mode	Shift
+Start - Single User Mode	Command ⌘ + S				// Can be used to access
+Start - Verbose Mode	Command ⌘ + V
+
+
+
+## Gestures
+
+Double Click	2 Fingers - Click
+
+Scroll	2 Fingers - Scroll Direction
+
+Zoom - In	2 Finger - Pinch In
+Zoom - Out	2 Finger - Pinch Out
+
+Spaces - Next on Left	3 Finger Swipe Right.
+Spaces - Next on Right	3 Finger Swipe Left.
+Spaces - View All	4 Finger Swipe Up
+
+App Launcher - View	3 Fingers + Thumb - Together
+App Launcher - Dismiss	3 Fingers + Thumb - Apart
+
+Desktop View - Change	3/4 Fingers - Left / Right		// Display Desktop or Dashboard
+Desktop Overview - View	3/4 Fingers - Up
+Desktop Overview - Dismiss	3/4 Fingers - Down
+
+
+
+## Keyboard
+
+
+### Edit - Copy
+
+Command ⌘ + C
+
+
+### Edit - Paste
+
+Command ⌘ + V
+
+
+### Edit - Line Start
+
+Command ⌘ + Arrow Left
+
+
+### Edit - Line End	
+
+ommand ⌘ + Arrow Right
+
+
+### Edit - Cursor Left One Word
+
+Option ⌥ + Arrow Left
+
+
+### Edit - Cursor Right One Word
+
+Option ⌥ + Arrow Right
+
+
+
+### Edit - Delete Right
+
+fn + Delete
+
+
+### PC - Sleep
+
+Option ⌥ + Command ⌘ + Eject
+
+
+### App - App Preferences
+
+Command ⌘ + ,
+
+
+### App - App Quit
+
+Command ⌘ + q
+
+
+### App - App Kill
+
+Option ⌥ + Command ⌘ + Esc
+
+
+### App - Window Close
+
+Command ⌘ + w
+
+
+### Apps - Hide / Unhide
+
+F11
+
+### Apps - Switch Between
+
+Command ⌘ + t
+
+
+### Dashboard - Show / Hide
+
+F12
+
+
+
+### Delete
+
+<cb>fn + Delete<>
+
+
+
+### Delete Right / Forward Delete
+
+<cb>fn + Delete<>
+
+
+
+### Desktop - Slide View (L / R)
+
+Control ⌃ + Left Arrow / Right Arrow
+
+
+### Dialog - Cancel
+
+Escape
+
+
+### Dialog - Don't Save
+
+Command ⌘ + Delete
+
+
+### Dialog - Open - Goto Directory
+
+Command ⌘ + Shift + G
+
+
+### Dialog - Open - Parent Directory
+
+Command ⌘ + Up Arrow
+
+
+### Dialog - Save
+
+Enter
+
+### Dialog - Save - Goto Directory
+
+[ Paste ] / Command ⌘ + V	// Paste directory from clipboard.
+
+
+### Dictation - Start
+
+Fn, Fn
+
+
+### Dictation - End
+
+Fn	
+
+
+### Dock - Show / Hide
+
+Option ⌥ + Command ⌘ + D
+
+
+### OS - Lock
+
+Command ⌘ + Control ⌃ + Q
+Control ⌃ + Shift + Power	// For older macs with no eject button.
+Control ⌃ + Shift + Eject	// Older Macs
+
+
+### File - Create Alias
+
+Option ⌥ + Command ⌘ + Drag To Folder
+
+
+### File - Duplicate
+
+Command ⌘ + D
+
+
+### File - New Folder
+
+Command ⌘ + Shift + N
+
+
+### File - Selected - Summary
+
+Command ⌘ + Control ⌃ + i
+
+
+### Page Top
+
+<cb>Command ⌘ + Arrow Up<>
+
+Or
+
+<cb>fn + Arrow Left<>
+
+
+### Page Bottom
+
+<cb>Command ⌘ + Arrow Down<>
+
+Or
+
+<cb>fn + Arrow Right<>
+
+
+### Page Down
+
+<cb>fn + Arrow Down<>
+
+
+### Page Up
+
+<cb>fn + Arrow Up<>
+
+
+### Print Screen to Clipboard
+
+Command ⌘ + Control ⌃ + Shift + 3
+@
+@ copy
+
+
+### Print Screen to File
+
+Command ⌘ + Shift + 3	// Copied to desktop
+@
+@ copy
+
+
+### Print Screen - Area to Clipboard
+
+Command ⌘ + Control ⌃ + Shift + 4
+@
+@ copy
+
+
+### Print Screen - Area to File
+
+Command ⌘ + Shift + 4, Select Area	// Copied to desktop
+@
+@ copy
+
+
+### Print Screen - Window To File
+
+Command ⌘ + Shift + 4
+Space
+Select Window With Mouse	// Copied to desktop
+@
+@ copy
+
+
+### Siri
+
+Hold Command ⌘ + Space
+
+
+### Window - Hide
+
+Command ⌘ + h
+
+
+### Window - Hide - All Others
+
+Command ⌘ + Option ⌥ + h
+
+
+### Window - Move - Background Window Only / No Focus
+Command ⌘ + Mouse Move
+
+
+### Window - Zoom - Full Screen
+
+Command ⌘ + Control ⌃ + F	// Toggles to and from full screen mode.
+
+
+## Keyboard - Finder
+
+Files - Hidden - Show	Command ⌘ + Shift + .
+Folder - Go To	Command ⌘ + Shift + G
+File - Selected - Summary	Command ⌘ + Control ⌃ + i
+	
+
+
+## Keyboard - Terminal
+
+New - Tab	Command ⌘ + T
+New - Window	Command ⌘ + N
+Close	Control ⌃ + D
+Close - Tab	Command ⌘ + W
+
+Screen - Clear All	Command ⌘ + K
+
+Cursor - Delete Before	Control ⌃ + U
+Cursor - Delete After	Control ⌃ + K
+Cursor - Delete All	Control ⌃ + C
+Cursor - Move - To Beginning	Control ⌃ + A
+Cursor - Move - To End	Control ⌃ + E
+
+
+
+## Mouse - General
+
+
+### Audio - Select Device
+
+Alt + Right Click					// Displays all available audio sources
+
+Click - Right Click	Press down 2 fingers side by side.
+Click - Right Click Drag	Press down 2 fingers side by side, drag together.
+
+
+### Notification - Dismiss
+
+Trackpad - 2 fingers swipe right.
+
+
+### Scroll - Up Down
+
+Trackpad - 2 fingers side by side - drag up/down.
+	
+
+## Mouse - Finder
+
+Folders - Merge	Option ⌥ + Drag
+
+
+## Mouse - Apps
+
+Path Finder - File List Summary	Right Click
+Control ⌃ + Summary Info			// Summary will show when Control ⌃ is pressed.
+
+
+# How To
+
+
+### App - Bundle Identifier - Get
+
+My script: app.bundle.id path/AppName.app
+
+mdls -name kMDItemCFBundleIdentifier -r path/AppName.app
+
+
+### App - Recent Docs - Clear
+
+Open App
+
+Menu: File -> Open Recent -> Clear
+
+- or -
+
+defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
+
+
+### App - Recent Docs - Disable
+
+Find App's Application Bundle Identifier			// Looks like com.apple.
+
+My script: app.recent.disable application.bundle.identifier
+
+defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
+defaults write application.bundle.identifier NSRecentDocumentsLimit 0
+defaults write application.bundle.identifier.LSSharedFileList RecentDocuments -dict-add MaxAmount 0
+
+Restart the dock:
+	killall Dock
+
+- or -
+
+recent.disable application.bundle.identifier
+
+
+### App - Recent Docs - Enable
+
+Find App's Application Bundle Identifier			// Looks like com.apple.
+
+defaults delete application.bundle.identifier NSRecentDocumentsLimit
+defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
+
+
+### App - Open
+
+open -a application.app param1...
+open -n application.app param1...
+
+	-a	Opens an application.
+	-n	Opens a new instance of the application
+
+
+### App - ABI - Get
+
+/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' “path.AppName.app/Contents/Info.plist"
+
+- or -
+
+abiinfo path.AppName 					// My script.
+
+- or -
+
+osascript -e 'id of app "Application Title"'
+
+
+### App - Mail - Raw Email
+
+Menu: View -> Message -> Raw Source
+
+
+### Apple Script - Run
+
+osascript
+
+
+### Audio - Record
+
+Open QuickTime
+	- File -> New Audio Recording
+
+
+### Audio - Recording Level - Set
+
+From Menu Bar:
+Right click volume icon.
+Select 'Sound Preferences...'
+Select 'Input' (Top Button Bar)
+
+
+### Auto Save - Disable
+
+<cb>defaults write com.apple.TextEdit ApplePersistence -bool no<>
+
+
+### Background Set
+
+<cb>sqlite3 "~/Library/Application Support/Dock/desktoppicture.db" "update data set value = '<v>/path/to/picture.png<>'";
+killall Dock;<>
+
+
+### Bash - Session History - Prevent
+
+Create file:
+	
+<cb>~/.bash_sessions_disable<>
+
+
+### Clipboard - Copy To
+
+<cb><v>command<> | pbcopy				// pd = paste board.<>
+
+
+Example:
+<cb>ls -l | pbcopy<>
+
+
+### Clipboard - Copy From
+
+<cb>pbpast | command <>
+
+
+Example:
+<cb>pbpaste | grep foo > results.txt<>
+
+
+### Command - Execute On Change
+
+Use <c>fwatch<>:
+
+<cb>fswatch <v>file_name<> | (while read; <v>run_command<>; )<>
+
+<cb>fswatch <v>file_name<> <v>file_name_2<> <v>...<> | (while read; <v>command_1<>; <v>command_2<>; <v>...<>; )<>
+
+To install fswatch:
+
+<cb>brew install fswatch<>
+@
+@ when changes, after change, refresh, reload, on update
+
+
+### Desktop - Spaces
+
+See: Spaces (Below)
+
+
+
+### Dictionary - Add
+
+Open TextEdit.
+Type in word
+Context Menu -> Learn Spelling
+
+
+
+### Dictionary - Remove
+
+Open TextEdit.
+Type in word
+Context Menu -> Unlearn Spelling
+
+
+
+### Directory - Compare
+
+<cb>diff -qr <v>directory_1<> <v>directory_2<><>
+@
+@ folder
+
+
+
+### Directory - Create Link
+
+<cb>ln -s /directory/name linkName<>
+
+
+The link is created in the current directory.
+@
+@ folder
+
+
+
+### Directory - Open Current
+
+<cb>open .<>
+@
+@ folder
+
+
+
+### Directory - Replicate
+
+<cb>rsync -avE --delete <v>source_dir<>/ <v>target_parent_dir<>/<>
+
+
+	-a	Archive Mode
+	-v	Verbose
+	-E	Extended Attributes
+	@
+	@ folder
+
+
+
+### Directory - Open In Finder	
+
+<cb>open <v>path<><>
+@
+@ folder
+
+
+
+### Directory - Share - With Windows	
+
+-> System Preferences -> Sharing -> File Sharing -> Options
+-> "Share files and folders using SMB"
+@
+@ folder
+
+
+
+### Directories - Merge
+
+<cb>ditto <v>source<> <v>destination<><>
+
+Show Files While Copying:
+
+<cb>ditto -V <v>source<> <v>destination<><>
+@
+@ folders
+
+
+
+### Display - Spaces
+
+See: Spaces (Below)
+
+
+
+### Download History - Clear
+
+<cb>sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'<>
+
+
+
+### Download History - View
+
+<cb>sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'<>
+
+
+
+### Drive - SMB - Mount
+
+<cb>mount -t smbfs //username:password@<v>server_name<>/<v>share_name<> /Volumes/<v>mount_directory<><>
+
+Note: MountDir must exist.
+
+Note: <v>server_name<> may be in the form of <v>server_name<><b>.local<> especially for windows machines.
+
+
+
+### Drive - Rename
+
+Terminal:
+
+<cb>/usr/sbin/diskutil list
+/usr/sbin/diskutil rename /dev/<v>disk2<> "<v>new_drive_name<>"<>
+
+
+
+### Drive - Unmount
+
+/usr/sbin/diskutil unmount /dev/disk2
+
+
+
+### DVD - Create
+
+[ Researching ]
+
+
+
+### File - Compare
+
+diff -q file1 file2
+
+
+
+### File - Convert - PEM -> PPK
+
+puttygen privatekey.pem -o privatekey.ppk
+
+Requires:
+putty						// brew install putty.
+
+
+
+### File - Convert - PPK -> PEM
+
+puttygen privatekey.ppk -O private-openssh -o privatekey.pem
+ssh -i privatekey.pem user@my.server.com
+chmod go-rw privatekey.pem
+
+Requires:
+putty						// brew install putty.
+
+
+
+### File - Delete secure
+
+<cb>srm<>
+
+
+
+### File - MD5 Value
+
+<cb>md5 <v>file_name<><>
+
+
+
+### File - Search By Contents
+
+<cb>grep "<v>search string<>" -R . 			<#># Searches from current directory.<>
+
+mdfind "<v>search string<>" 			<#>// Uses Spotlight<><>
+
+
+
+### Files - Being Accessed - View
+
+<cb>fs_usage<>
+
+
+
+### Files - Opened - View
+
+<cb>lsof<>
+
+
+
+### Files - Quarantine - Disable
+
+<cb>defaults write com.apple.LaunchServices LSQuarantine -bool false<>
+
+
+
+### Font - Strikethrough
+
+->
+
+
+### Hardware - Hard Reset
+
+Power Button - 5 Seconds		// Shuts it down.
+Pause a few seconds.
+Power Button - Press			// Starts is back up.
+
+// Doesn't always seem to work.
+
+
+
+### Image - Crop
+
+Preview Image
+Select Selector Tool
+Highlight Cropped Section
+
+	Crop icon will appear
+
+Click Crop Icon
+
+
+
+### Image - Markup
+
+Preview Image
+Show markup tool bar
+
+	Menu -> View -> Show Markup Toolbar (way down menu options)
+
+Markup away.
+
+
+
+### Image - Markup - Add Arrow
+
+Preview Image
+Show markup tool bar
+
+	Menu -> View -> Show Markup Toolbar (way down menu options)
+
+Select Shape Icon
+Select Arrow
+
+	Arrow Will Be Placed On Image
+
+
+
+### Image - Resize
+
+App: Preview
+Menu: Tools -> Image Size...
+
+
+### Images - To Gif
+
+See: Convert.help
+
+
+### Image File - To Disk
+
+Use: balenaEtcher (App)
+
+
+### Image File - To Disk - Terminal
+
+1. Get target device id (use Disk Utilities, right click device, select "Get Info").
+2. Unmount device.
+3. sudo dd if=path/to/image.img of=/dev/target_device_id
+
+Note: yes - /dev/rdiskn
+Note: no - /dev/diskn
+
+
+### Java - Location - Find
+
+/usr/libexec/java_home
+
+
+### Keyboard Layout - Lock Screen - Change
+
+System Preferences -> Users and Groups
+'Login Options'
+'Show Input menu in login window' = checked
+
+
+### Keyboard Layout - Install
+
+Copy keyboard layout xml to
+
+<card><l>/Library/Keyboard Layouts<><>
+
+
+### Keychain
+
+Keychain Directories:
+$HOME/Library/Keychains/keychainName.keychain
+	
+
+### Keychain - Close
+
+<cb>security lock-keychain keychainFile<>
+
+
+### Keychain - List All
+
+<cb>security list-keychains<>
+
+
+### Keychain - Open
+
+<cb>security unlock-keychain -p password keyChainFile<>
+
+
+### Keychain - Property Value - Get
+
+<cb>security find-generic-password -gs propertyName -w<>
+
+
+<#>Will search all open keychain files.</.
+
+
+### Lang - JS - Run
+
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc
+	- To print - 'debug ("text")
+
+
+### Link - Create
+
+ln -s appName linkName
+
+
+### Login - Background - Set
+
+Convert image to png
+
+Copy To
+
+	/System/Library/Frameworks/AppKit.framework/Versions/C/Resources/NSTexturedFullScreenBackgroundColor.png
+
+
+### Login - Keyboard - Set
+
+Open Keyboard ... Input Source
+
+<cb>System Preferences
+-> Language & Region
+
+General
+"Keyboard Preferences..."
+"Input Source"<>
+
+Ensure preferred keyboard is listed as first.
+
+Open Users & Groups ... Login Options
+
+<cb>System Preferences
+-> Users & Groups
+
+"Login Options"<>
+
+Uncheck "Show input menu in login window"		<#># If checked.<>
+Recheck "Show input menu in login window"
+
+Open Language & Region
+
+Add Language And Apply To Login:
+
+<cb>Add a language						<#># Anyone will do.<>
+Move to top of language list.
+Click ⚙ (gear icon).
+Select "Apply to Login Window"<>
+
+Move actual preferred language to top of language list.
+Click ⚙ (gear icon).
+Select "Apply to Login Window"
+
+Delete unwanted language.
+
+Reboot.
+
+
+
+### Login - Keyboard - Set, From Commandline
+
+Run:
+
+<cb>sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/<>
+
+
+Copies current user settings to the login settings.
+Seems to work best.
+
+
+
+### Logins - View Latest
+
+last
+
+Network - Bound To Port	netstat -anp tcp | grep portNumber
+
+
+### Network - Devices - List
+
+arp -a
+
+
+### Network - Host - Local - Access
+
+hostName.local 				// Access network host in this form.
+
+
+### Network - Info
+
+ifconfig
+
+	networksetup -listallhardwareports
+
+
+### Network - IP Address - Local
+
+<cb>ipconfig getifaddr en0<>
+
+
+
+### Network - Port Scan
+
+Open Network Utility				// Use Spotlight
+Tab: Port Scan
+Enter IP address to scan			// 127.0.0.1 for self scan
+Click "Scan"
+
+
+
+### Path - Add To
+
+PATH=$PATH:newPath
+
+
+### Pictures -> Movie
+
+CommandLine: convert			// imagemagick library.
+See: Convert.Help
+
+
+### Privacy -> Settings
+
+System Preferences -> Spotlight
+
+uncheck "Spotlight Suggestions"
+uncheck "Bing Web Searches"
+
+
+### Quarantine - Relax
+
+From Terminal:
+sudo spctl --master-disable 		// Restores "Allow apps downloaded from:" "Anywhere" option.
+
+System Preferences -> Security & Privacy
+Tab: General
+
+Unlock
+
+Check "Anywhere"
+
+
+### Remote Folder - Windows
+
+smb://server/shareName
+
+### Screens - Rearrange Setting
+
+Settings -> Mission Control -> "Automatically rearrange spaces based on most recent use"
+
+\@reorder
+
+
+### Script - Run in new Terminal	
+
+open -a Terminal.app script
+
+
+### Script - sh - Run	
+
+sh scriptFileName
+
+
+### Security - Warning Message - App
+
+Note: For when an app repeatedly shows a warning message on opening...
+
+	sudo xattr -d com.apple.quarantine /Applications/AppName.app
+
+
+### Server - SSH / Telnet To
+
+See: SSH
+
+
+### Service - Start / Stop
+
+See: Launchctl (above)
+
+sh script - Run	See: Script - Sh - Run
+
+
+### Spaces - Create
+
+4 Finger Swipe Up
+	Move cursor to top right
+	Click '+'
+
+### Spaces - Preserve Order
+
+Settings...
+Mission Control...
+Uncheck "Automatically rearrange Spaces..."
+
+
+### Spotlight Index Tool
+
+mdutil
+
+
+### Spotlight Index Tool - Enable
+
+mdutil -i on /Volumes/DriveName
+
+
+### Spotlight Index Tool - Rebuild
+
+mdutil -E /Volumes/DME-All/*
+
+
+### SSH
+
+ssh -i privatekey.pem user@my.server.com
+
+
+### SSH - Local Access - Enable
+
+Apple -> System Preferences -> Sharing
+
+	Check 'Remote Login'
+
+
+### SSH - Local Access - Test (Quick)
+
+sftp localhost
+
+
+### SMC - Reset
+
+
+#### T2 Chip Desktop
+
+Shut down the Mac.
+Wait 15 seconds.
+Restart the Mac.
+
+
+#### T2 Chip Laptops - 1st Attempt
+
+Shut down the Mac.
+Hold the power button for 10 seconds.
+	(The Mac will start and then shut down)
+Restart the Mac.
+
+
+#### T2 Chip Laptops - 2nd Attempt
+
+Shut down the Mac.
+Hold Shift + Control + Option for 7 seconds.
+Then also press the Power Button for another 7 seconds.
+
+Restart the Mac.
+
+
+#### Pre T2 Laptops (2009 - 2017)
+
+Shut down the Mac.
+Hold Shift + Control + Option + Power Button for 10 seconds.
+Restart the Mac.
+
+
+
+### System - Clock - Track Network
+
+<cb>sudo tcpdump -vv '(port 123)'<>
+
+Wait up to 2 minutes to see network traffic.
+
+
+### System - CPU Type
+
+<cb>sysctl -n machdep.cpu.brand_string<>
+
+
+### System - Devices / Sys Info
+
+<cb>system_profiler<>
+
+
+### System - Lock
+
+<cb>/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend<>
+
+
+### System - Name
+
+<cb>scutil --get LocalHostName<>
+
+Returns the the computer name or it's network name.
+
+
+
+### System - Power Management
+
+<cb>pmset<>
+
+
+### System - Power Management - Reset
+
+Reboot the computer
+Hold Option ⌥ + Command ⌘ + P + R
+
+Note: Will wipe the power management memory. Flushes NV Ram Settings.
+@
+@ NVRAM
+
+
+### System - Recovery - Start
+
+Reboot the computer
+Hold [Command] + R
+
+System Reset
+
+
+### System - Sleep
+
+From Terminal
+
+<>pmset sleepnow<>
+
+Apple Script:
+
+<cb>osascript -e 'tell application "Finder" to sleep'<>
+
+
+### System - Version
+
+<cb>sw_vers<>
+
+
+
+### System Preferences - View
+
+<cb>open -a system\ preference<>
+
+
+
+### Text - Autocorrect - Disable
+
+Menu -> Apple -> System Preferences -> Keyboard -> Tab: “Text”
+Uncheck “Correct spelling automatically”
+
+
+
+### Text - Smart Quotes - Disable
+
+Menu -> Apple -> System Preferences -> Keyboard -> Tab: “Text”
+Uncheck “Use smart quotes and dashes”
+
+
+
+### Text - Say
+
+<cb>say "<v>text to say aloud<>"<>
+
+Text to Speech
+@
+@ speak alowed, speech
+
+
+
+### Text - Say, Set Voice
+
+<cb>say -v <v>voice_name<> "<v>text to say aloud<>"<>
+
+Example:
+
+<cb>say -v <v>samantha<> "<v>what is it meat bag?<>"<>
+@
+@ speak alowed, speech
+
+
+
+### Text - Say - Voices
+
+<cb>Name			Country			Gender		Lang.	Country			Notes
+
+Alex			US				Male		en		US				Apple Default
+Alice			Italian			Female		it		IT
+Alva			Swedish			Female		sv		SE
+Amelie			Canadian		Female		fr		CA
+Daniel			English			Male		en		GB				British Accent, Deep, Clear
+Diego			Spanish			Male		es		AR				Argentina
+Fiona			Scottish		Female		en		Scotland		Scottish Accent
+Fred			US				Male		en		US				Hawkings Robotic
+Jorge			Spanish			Male		es		ES				Spain
+Juan			Spanish			Male		es		MX				Mexico
+Karen			Australian		Female		en		AU				Scottish Accent
+Kyoko			Japanese		Female		ja		JP
+Milena			Russian			Female		ru		RU
+Moira			Irish			Female		en		IE				Irish Accent
+Monica			Spanish			Female		es		ES
+Paulina	 		Spanish			Female		es		MX				Mexico
+Rishi			Indian			Male		en		IN				Indian Accent
+Samantha		US				Female		en		US				Carrot Weather
+Tessa			South African	Female		en		ZA				
+Thomas			French			Male		fr		FR
+Ting-Ting		Chinese			Female		zh		CN
+Veena			Indian			Female		en		IN
+Victoria		US				Female		en		US
+Yuna			Korean			Female		ko		KR<>
+
+
+<cb>Country			Gender			Name
+
+Australian		Female			Karen		
+Canadian		Female			Amelie		
+English			Male			Daniel		
+Indian			Female			Veena		
+Indian			Male			Rishi		
+Irish			Female			Moira		
+Scottish		Female			Fiona		
+South African	Female			Tessa		
+US				Female			Samantha	
+US				Female			Victoria	
+US				Male			Alex		
+US				Male			Fred		
+
+Chinese			Female			Ting-Ting	
+French			Male			Thomas		
+Italian			Female			Alice		
+Japanese		Female			Kyoko		
+Korean			Female			Yuna		
+Russian			Female			Milena		
+Spanish			Female			Monica		
+Spanish			Female			Paulina 	
+Spanish			Male			Diego		
+Spanish			Male			Jorge		
+Spanish			Male			Juan		
+Swedish			Female			Alva<>
+
+
+
+### Trash - Delete From Command Line
+
+rm -rf ~/.Trash/*
+
+
+### Users - List
+
+dscl . list /Users | grep -v '^_' 						// Simple list.
+dscacheutil -q user | grep -A 3 -B 2 -e uid:\ 5'[0-9][0-9]' 		// More detailed.
+
+
+### Variables - Global User - Set
+
+Create plist File.
+Place in ~/Library/LaunchAgents/user.startup.plist
+Enable with launchctl.
+
+Sample plist File	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+		<dict>
+			<key>Label</key>
+			<string>user.startup</string>
+			<key>ProgramArguments</key>
+			<array>
+				<string>sh</string>
+				<string>-c</string>
+				<string>launchctl setenv ENV_VARIABLE VALUE</string>
+			</array>
+			<key>RunAtLoad</key>
+			<true/>
+		</dict>
+	</plist>
+
+
+### Video - Compress
+
+Open In QuickTime
+	-> File -> Export
+	Set options.
+
+
+### Window - Off Screen - Recover
+
+Menu -> Window -> Zoom
+
+
+# Troubles Shooting
+
+
+
+### High CPU / Computer Sluggish
+
+Check the computer is cool.
+Check the vents are clear and air can move around.
+
+
+
+### Password - Not Accepted In System Preferences
+
+Reset the SMC.
+
+
+
+# Reference - System - Files
+
+Background - Login	/Library/Caches/com.apple.desktop.admin.png
+
+Global Paths	/etc/paths	// Global Paths (each path on a new line).
+Global Shells	/etc/shells
+
+
+
+# Reference - System - Folders
+
+Apps	/Applications
+Apps - App Data	~/Library/Application Support
+Apps - Bash / Command Line	/bin
+Apps - Global Config	/Library/Application Support
+Apps - Startup	/Library/StartupItems
+
+Backgrounds - Desktop	/Library/Desktop Pictures
+
+
+
+### Command Line - To Clipboard	Use: pbcopy
+
+<cb>script | pbcopy<>
+
+Output will be copied into clipboard.
+
+
+
+### OS - Keyboard Layouts
+
+<card><l>/Library/Keyboard Layouts<><>
+
+
+
+### OS - OS X
+
+<card><l>/System<><>
+
+Everything under here belongs to OS X.
+
+
+
+### Startup Items - OS
+
+Run As Root:
+
+<card><l>/Library/LaunchDaemons<><>
+
+MacOS Components, Run As Root:
+
+<card><l>/System/Library/LaunchAgentss<><>
+
+Works But Deprecated:
+
+<card><l>/Library/StartupItems<><>
+
+User Startup Items:
+
+<card><l>~/Library/LaunchAgents<><>
+
+<card><l>$HOME/Library/LaunchAgents<><>
+
+
+
+### User Files / Directories
+
+<card><l>/Users<><>
+
+
+
+#### User Home
+
+Home Directory:
+
+<card>/Users/<v>user_name<><>
+
+Alias To Home Directory:
+
+<card><l>~<><>
+
+<card>$HOME<>
+
+
+
+#### User - Account - Preferences
+
+<card>/Users/<v>user_name<>/Library/Preferences<>
+
+<card>$HOME/Library/Preferences<>
+
+
+
+#### User - Apps
+
+<card>/Users/<v>user_name<>/Applications<>
+
+<card>$HOME/Applications<>
+
+
+
+#### User - App Data / Config
+
+<card>/Users/<v>user_name<>/Library/ApplicationSupport<>
+
+<card>$HOME/Library/ApplicationSupport<>
+
+App Specific:
+
+<card>/Users/<v>user_name<>/Library/ApplicationSupport/<v>app_name<><>
+
+<card>$HOME/Library/ApplicationSupport/<v>app_name<><>
+
+
+
+
+
+#### User - App Config Directory  (Unix Stile)
+
+<card>/Users/<v>user_name<>/.config<>
+
+App Specific Directory:
+
+<card>/Users/<v>user_name<>/.config/<v>app_name<><>
+
+
+
+#### User - Library Folder
+
+<card>/Users/<v>user_name<>/Library<><>
+
+
+
+#### User - Data
+
+<card>/Users/<v>user_name<>/Documents<>
+
+<card>$HOME/Documents<>
+
+
+
+#### User - Desktop
+
+<card>/Users/<v>user_name<>/Desktop<>
+
+<card>$HOME/Desktop<>
+
+
+
+#### User - Downloads
+
+<card>/Users/<v>user_name<>/Downloads<>
+
+<card>$HOME/Downloads<>
+
+
+
+#### User - Keyboard Layouts
+
+<card>/Users/<v>user_name<>/Library/Keyboard Layouts<>
+
+<card><l>$HOME/Library/Keyboard Layouts<><>
+
+
+
+#### User - Startup Scripts
+
+<card>/Users/<v>user_name<>/Library/LaunchAgents<>
+
+<card>$HOME/Library/LaunchAgents<>
+
+<card><l>/Library/LaunchAgents<><>
+
+<card><l>/System/Library/LaunchAgents<><>
+
+
+
+### User - Apps - iOS Backups
+
+<card>~/Library/ApplicationSupport/MobileSync/Backup<>
+
+
+
+### Language - Java
+
+<card><l>/Library/Java/JavaVirtualMachines/<><>
+
+<card><l>/System/Library/Java/JavaVirtualMachines/<><>
+
+
+
+### Language - Java - Locate
+
+Bash Command:
+
+<card><l>/usr/libexec/java_home<><>
+
+
+
+# Reference - App Folders
+
+
+
+### Apps - User Info (Typical)
+
+<card>~/Library/Application Support/<v>app_name<><>
+
+
+
+### App - Ant	
+
+<card><l>/usr/share/ant<><>
+
+
+
+### App - Java
+
+<card><l>/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home<><>
+<card><l>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home<><>
+<card><l>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home<><>
+
+
+
+### App - iTunes
+
+Device Backups:
+
+<card><l>~/Library/Application Support/MobileSync/Backup/<><>
+
+
+
+### App - Keychain
+
+<card>$HOME/Library/Keychains/keychainName.keychain<
+
+
+
+### App - Python 2
+
+<card><l>/System/Library/Frameworks/Python.framework/Versions/<v>..<><><>
+
+File:
+
+<card><l>/usr/bin/python<><>
+
+
+
+### App - Python 3
+
+<card><l>/Library/Frameworks/Python.framework/Versions/<v>...<><><>
+
+File:
+
+<card><l>/usr/local/bin/python3<><>
+
+
+
+### Finder Folder - Audio
+
+<l>/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder<>
+
+
+
+# Reference - App Data Folders
+
+Messages	~/Library/Messages
+
+
+
+# Reference - Application Bundle Identifiers
+
+OmniOutliner	com.omnigroup.OmniOutliner5.MacAppStore
+Text Edit	com.apple.TextEdit
+VLC	org.videolan.vlc
+
+
+
+# ################# Sorted #################################
+
+
+# Reference - Apps
+
+
+### Alinof Timer
+
+Timer App
+
+
+### balenaEtcher
+
+Copies IMG files to devices such as SD Cards
+
+
+### Boxer
+
+DOS Emulator
+
+
+### Camtasia
+
+Video Tutorial Creator
+
+
+### Charles
+
+Web Debugging Proxy
+
+
+### ControllerMate
+
+X-Keys Keypad Programmer
+
+
+### Craft
+
+A document
+
+
+### Downcast
+
+Podcast player
+
+
+### Duo
+
+A developer tool to help create web applications.
+
+Shows your web page in 2 different sized windows.
+
+
+### Fuse
+
+Open Source NTFS driver.
+@
+@ Windows
+
+
+### Fuse
+
+ZX Spectrum Emulator
+
+
+### Giphy
+
+Video Capture to GIF creator.
+
+
+### Kite
+
+AI Based Program Helper
+
+
+### MacDown
+
+Mac Mark Down Viewer/Editor	// .md Markdown, Markup
+
+
+### Paletro
+
+Search App's Menu for Actions(Shift + ⌘ + P)
+
+
+### PDFPenPro
+
+PDF Editor
+
+
+### Prepo
+
+iOS Icon Resizer Utility
+
+
+### Sonic Pi
+
+Music Programming App
+
+
+### Swinsian
+
+iTunes Replacement Music Player
+
+
+### TeXWorks
+
+Latex Editor
+
+
+### Transmission
+
+Bittorrent client.
+@
+@ bit torrent
+
+
+### TunnelBrick
+
+VPN Software (Works with OpenVPN / Asus
+
+
+### Typora
+
+Minimalist markdown editor.
+
+
+### Ukelele
+
+Keyboard Layout Editor
+
+
+### USB Overdrive
+
+Keyboard / Mouse Reprogramming Utility
+
+
+### Vice
+
+Commodore 64 Emulator
+
+
+### Viscosity
+
+Open Source VPN
+
+
+### XCTU
+
+Tool for programming rf devices like Zigbee controllers.
+
+
+
+# Reference - MacOS Versions
+
+Wiki:
+<l>https://en.wikipedia.org/wiki/MacOS<>
+
+
+### OS X 10.0 (Cheetah
+
+2001.03.24
+
+
+### OS X 10.1 (Puma)
+
+2001.09.25
+
+
+### OS X 10.2 (Jaguar)
+
+2002.08.23
+
+
+### OS X 10.3 (Panther)
+
+2003.10.24
+
+
+### OS X 10.4 (Tiger)
+
+2005.04.29
+
+
+### OS X 10.5 (Leopard)
+
+2007.10.26
+
+
+### OS X 10.6 (Snow Leopard)
+
+2009.08.28
+
+
+### OS X 10.7 (Lion)
+
+2011.07.20
+
+
+### OS X 10.8 (Mountain Lion)
+
+2012.07.25
+
+
+### OS X 10.9 (Maverics)
+
+2013.10.22
+
+
+### OS X 10.10 (Yosemite)
+
+2014.10.16
+
+
+### OS X 10.11 (El Capitan)
+
+2015.09.30
+
+
+### MacOS 10.12 (Sierra)
+
+2016.09.20
+
+
+### MacOS 10.13 (High Sierra)
+
+2017.09.25
+
+
+### MacOS 10.14 (Mojave)
+
+2018.09.24
+
+
+### MacOS 10.15 (Catalina)
+
+2019.10.07
+
+Dropped support for 32 bit apps.
+
+
+### Mac OS X 11 (Big Sur)
+
+2020.11.12
+
+Major overhaul.
+Look and feel updated.
+M1 Mac support.
+
+
+# Glossary
+
+
+## Acronyms
+
+
+### ABI
+Application Bundle Identifier
+
+
+### NVRAM
+Non Volatile RAAM
+
+
+### PRAM
+Parameter RAM
+
+
+### SMC
+System Management Controller
+
+
+### SMB
+Service Message Block
+
+
+### UTI
+Universtal Type Identifier
+
+
+## Terms
+
+
+### Alias
+See: File Link - Alias
+
+
+### Application Bundle Identifier
+An identifier used by apple to store an application’s settings.
+
+
+### Dashboard
+Show dashboard widgets
+
+
+### File Links
+Shortcut links to files elsewhere on the drive. Implemented through a small file that refers to another file (the target).
+3 Types: Alias, Symbolic Link, Hard Link
+
+
+### File Link - Alias
+Oldest MAC linking feature. A small fine containing both the path and the file's inode value. Aliases only work in Finder (not in Terminal or other places). Aliases will work even after the file has been moved.
+
+
+### File Link - Hard Link
+Unix based link to a file. This stores the file's inode value.
+
+
+### File Link - Symbolic Link
+Unix based link between the shortcut and the target file. Links are by path. Move the target file and the link is broken.
+
+
+### Hard Link
+See: File Link - Hard Link
+
+
+### Launch Services
+The os component responsible for figuring out what application to launch for a given file or file type.
+
+
+### Launchpad
+Shows iOS style app launcher
+
+
+### Lightening Connector
+The updated iPhone / iPad connectors. It is reversible, supplies up to 12w of power (vs 9 for usb), power can be given in either direction and pins can be reassigned from digital to analog. Has 8 pins.
+
+
+### Links
+See: File Links
+
+
+### MacOS
+Fork of BSD (BSD Descendant)
+Originally: OS X
+
+
+### Memory
+Memory Types: Wired, Active, Inactive, Free.
+- Wired: memory that is active and can't be written out to the hard drive.
+- Active: The program that is currently running.
+- Inactive: Programs that are no longer running but remains in memory to allow quick restart. This memory will be given over to another program if there is no other available memory.
+- Free: Memory that has been unused and is free for anything that needs it.
+
+
+### Mission Control
+Shows all desktops, applications.
+
+
+### Non Volatile RAM (NVRAM)
+Non Volatile RAM.
+
+A small amount of RAM used to store and quickly access certain settings.
+
+Also Called: PRAM (Parameter RAM)
+@
+@ NV Ram, NVRAM, PRAM, P RAM
+
+
+### Spaces
+OSX's ability to create multiple desktops or spaces. Switch between them by using three fingered swipes.
+
+
+### Symbolic Link
+See: File Link - Symbolic Link
+
+
+### System Management Controller (SMC)
+A mac montherboard subsystem that controls board functions:
+Power management, battery charing, video mode switching, sleep, waking, hibernation, LED indicators.
+Seems to also have some security management features too.
+
+
+### T2 Chip
+The security chip on Macs (-2020)
+
+
+### Thunderbolt
+A serial port that combines PCI Express and Display Port with a DC connection for power over one cable. Supports up to 6 peripherals. Has 20 pins.
+
+
+### Universtal Type Identifier (UTI)
+OSX's mechanism for identifying and managing file types.
