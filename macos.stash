@@ -4,249 +4,19 @@
 Covers MacOS related topics.
 
 
-
-# Dictation
-
-
-### Diction - Start
-
-Press:
-
-<cb>Fn, Fn<>
-
-
-### Diction - End
-
-Press:
-
-<cb>Fn<>
-
-
-### Delete - Character
-
-Say
-
-<cb>"Delete That"<>
-
-
-### Delete - Last Item
-
-Say
-
-<cb>"Scratch That"<>
-
-
-### New Line
-
-Say
-
-<cb>"New Line"<>
-
-
-### New Paragraph
-
-
-# Migration
-
-
-### Migrate - Email
-
-
-#### Easy Way…
-
-Setup New Mail Boxes
-
-Then rebuild mailboxes
-	For Each Mailbox
-		Select Mailbox
-		Menu: Mailbox -> Rebuild
-
-
-#### Untested Way…	
-
-New Computer
-
-	Delete Mail Files
-		~/Library/Mail/*
-	Delete Preferences
-		~/Library/Preferences/com.apple.mail*
-
-Original Computer
-
-	Rebuild Mail Boxes
-
-	Open Mail
-
-	For Each Mailbox
-		Select Mailbox
-		Menu: Mailbox -> Rebuild
-
-	Copy
-		~/Library/Mail/*
-		~/Library/Preferences/com.apple.mail*
-
-New Computer
-
-	Copy
-		~/Library/Mail/*
-		~/Library/Preferences/com.apple.mail*
-
-	Restart
-
-
-
-### Migrate - Messages
-
-On Both Computers	Close Messenger.
-
-New Computer
-
-	Delete contents of
-		~/Library/Messages
-
-Copy
-
-	Old Computer
-		~/Library/Messages
-	To New Computer
-		~/Library/Messages
-
-New Computer
-
-	Check / Set File Permissions
-			~/Library/Messages
-
-	Check Links
-		~/Library/Containers/com.apple.ichat/Data/Library/Messages
-			Archive		-> ~/Library/Messages/Archive
-			Attachments	-> ~/Library/Messages/Attachments
-
-New Computer
-
-	Restart
-
-
-
-### Reference - Folders
-
-
-
-### Messages - Folders
-
-Primary	~/Library/Messages
-
-	Archive					// Archive messages
-	Attachments				// Message attachments (photos, videos, etc.)
-
-Archive	~/Library/Containers/com.apple.ichat/Data/Library/Messages
-
-	Archive					// Link to ~/Library/Messages/Archive
-	Attachments				// Link to ~/Library/Messages/Attachments
-
-
-
-### Messages - Files
-
-Message Database
-
-	~/Library/Messages/chat.db
-
-
-
-
-# ################# Unsorted #################################
-
-
-
-
 # Summary
 
-Path Separator	:
+### Path Separator
+
+<cb>:<>
 
 
 
-# Desktop Apps
+# App - Console
 
-Dashboard	Show dashboard widgets
-Expose
-Expose - Mission Control	Shows all desktops, applications.
-Finder
-Launchpad	Shows iOS style app launcher
-Terminal
-
-
-
-# System Applications
-
-Wireless Diagnostics	Wireless Icon: alt + click -> "open Wireless Diagnostics..."	(Yosemite)
-	/System/Library/CoreServices [/Applications] /Wireless Diagnostics.app
-- Wireless Scanner	Menu: windows -> Scan
-	
-
-
-# Variables
-
-Variable Name	letters, numbers, _				// Nothin else is acceptable
-
-Var - Retrieve	$varName
-
-Var - Set	varName=value
-
-	or...
-	export varName=value
-
-	(export copies the variables to all child processes running in the current shell)
-
-Global Variables	File: /etc/launchd.conf
-
-	Use setenv command
-	setting varName value
-
-
-
-# OS - Executing a Script
-
-Auto Execute Script File	File execute permission must be set.
-	The 1st line needs a hash bang comment.
-
-	Bash (default version):	#! /usr/bin/bash
-
-Run from bash (manual)	bash scriptName
-
-Run from bash (auto) 	Set Execute permission
-	Call path/scriptName
-
-	ex:
-	chmod +x scriptName
-	./scriptName			// When in the same directory use './'
-
-Run App from bash	open -a appName
-
-		-a	Opens an application.
-		-n	Opens a new instance of the application
-
-
-
-# OS - Bash
-
-Startup Script	.bash_profile			// Unlike most bash instances...
-					// This is called every time terminal is opened.
-
-md5	Returns the md5 value of a file.
-
-
-
-# OS - Environment
-
-All Environments	/etc/launchd.conf
-
-Path	
-
-
-
-# App - Dashboard
-
-Insert Spacer	? Instructions for this ???
+Shows all system logs.
+@
+@ system logs
 
 
 
@@ -867,6 +637,47 @@ Folders - Merge	Option ⌥ + Drag
 
 Path Finder - File List Summary	Right Click
 Control ⌃ + Summary Info			// Summary will show when Control ⌃ is pressed.
+
+
+# Dictation
+
+
+### Diction - Start
+
+Press:
+
+<cb>Fn, Fn<>
+
+
+### Diction - End
+
+Press:
+
+<cb>Fn<>
+
+
+### Delete - Character
+
+Say
+
+<cb>"Delete That"<>
+
+
+### Delete - Last Item
+
+Say
+
+<cb>"Scratch That"<>
+
+
+### New Line
+
+Say
+
+<cb>"New Line"<>
+
+
+### New Paragraph
 
 
 # How To
@@ -1844,286 +1655,6 @@ Reset the SMC.
 
 
 
-# Reference - System - Files
-
-Background - Login	/Library/Caches/com.apple.desktop.admin.png
-
-Global Paths	/etc/paths	// Global Paths (each path on a new line).
-Global Shells	/etc/shells
-
-
-
-# Reference - System - Folders
-
-Apps	/Applications
-Apps - App Data	~/Library/Application Support
-Apps - Bash / Command Line	/bin
-Apps - Global Config	/Library/Application Support
-Apps - Startup	/Library/StartupItems
-
-Backgrounds - Desktop	/Library/Desktop Pictures
-
-
-
-### Command Line - To Clipboard	Use: pbcopy
-
-<cb>script | pbcopy<>
-
-Output will be copied into clipboard.
-
-
-
-### OS - Keyboard Layouts
-
-<card><l>/Library/Keyboard Layouts<><>
-
-
-
-### OS - OS X
-
-<card><l>/System<><>
-
-Everything under here belongs to OS X.
-
-
-
-### Startup Items - OS
-
-Run As Root:
-
-<card><l>/Library/LaunchDaemons<><>
-
-MacOS Components, Run As Root:
-
-<card><l>/System/Library/LaunchAgentss<><>
-
-Works But Deprecated:
-
-<card><l>/Library/StartupItems<><>
-
-User Startup Items:
-
-<card><l>~/Library/LaunchAgents<><>
-
-<card><l>$HOME/Library/LaunchAgents<><>
-
-
-
-### User Files / Directories
-
-<card><l>/Users<><>
-
-
-
-#### User Home
-
-Home Directory:
-
-<card>/Users/<v>user_name<><>
-
-Alias To Home Directory:
-
-<card><l>~<><>
-
-<card>$HOME<>
-
-
-
-#### User - Account - Preferences
-
-<card>/Users/<v>user_name<>/Library/Preferences<>
-
-<card>$HOME/Library/Preferences<>
-
-
-
-#### User - Apps
-
-<card>/Users/<v>user_name<>/Applications<>
-
-<card>$HOME/Applications<>
-
-
-
-#### User - App Data / Config
-
-<card>/Users/<v>user_name<>/Library/ApplicationSupport<>
-
-<card>$HOME/Library/ApplicationSupport<>
-
-App Specific:
-
-<card>/Users/<v>user_name<>/Library/ApplicationSupport/<v>app_name<><>
-
-<card>$HOME/Library/ApplicationSupport/<v>app_name<><>
-
-
-
-
-
-#### User - App Config Directory  (Unix Stile)
-
-<card>/Users/<v>user_name<>/.config<>
-
-App Specific Directory:
-
-<card>/Users/<v>user_name<>/.config/<v>app_name<><>
-
-
-
-#### User - Library Folder
-
-<card>/Users/<v>user_name<>/Library<><>
-
-
-
-#### User - Data
-
-<card>/Users/<v>user_name<>/Documents<>
-
-<card>$HOME/Documents<>
-
-
-
-#### User - Desktop
-
-<card>/Users/<v>user_name<>/Desktop<>
-
-<card>$HOME/Desktop<>
-
-
-
-#### User - Downloads
-
-<card>/Users/<v>user_name<>/Downloads<>
-
-<card>$HOME/Downloads<>
-
-
-
-#### User - Keyboard Layouts
-
-<card>/Users/<v>user_name<>/Library/Keyboard Layouts<>
-
-<card><l>$HOME/Library/Keyboard Layouts<><>
-
-
-
-#### User - Startup Scripts
-
-<card>/Users/<v>user_name<>/Library/LaunchAgents<>
-
-<card>$HOME/Library/LaunchAgents<>
-
-<card><l>/Library/LaunchAgents<><>
-
-<card><l>/System/Library/LaunchAgents<><>
-
-
-
-### User - Apps - iOS Backups
-
-<card>~/Library/ApplicationSupport/MobileSync/Backup<>
-
-
-
-### Language - Java
-
-<card><l>/Library/Java/JavaVirtualMachines/<><>
-
-<card><l>/System/Library/Java/JavaVirtualMachines/<><>
-
-
-
-### Language - Java - Locate
-
-Bash Command:
-
-<card><l>/usr/libexec/java_home<><>
-
-
-
-# Reference - App Folders
-
-
-
-### Apps - User Info (Typical)
-
-<card>~/Library/Application Support/<v>app_name<><>
-
-
-
-### App - Ant	
-
-<card><l>/usr/share/ant<><>
-
-
-
-### App - Java
-
-<card><l>/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home<><>
-<card><l>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home<><>
-<card><l>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home<><>
-
-
-
-### App - iTunes
-
-Device Backups:
-
-<card><l>~/Library/Application Support/MobileSync/Backup/<><>
-
-
-
-### App - Keychain
-
-<card>$HOME/Library/Keychains/keychainName.keychain<
-
-
-
-### App - Python 2
-
-<card><l>/System/Library/Frameworks/Python.framework/Versions/<v>..<><><>
-
-File:
-
-<card><l>/usr/bin/python<><>
-
-
-
-### App - Python 3
-
-<card><l>/Library/Frameworks/Python.framework/Versions/<v>...<><><>
-
-File:
-
-<card><l>/usr/local/bin/python3<><>
-
-
-
-### Finder Folder - Audio
-
-<l>/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder<>
-
-
-
-# Reference - App Data Folders
-
-Messages	~/Library/Messages
-
-
-
-# Reference - Application Bundle Identifiers
-
-OmniOutliner	com.omnigroup.OmniOutliner5.MacAppStore
-Text Edit	com.apple.TextEdit
-VLC	org.videolan.vlc
-
-
-
-# ################# Sorted #################################
-
-
 # Reference - Apps
 
 
@@ -2504,3 +2035,470 @@ A serial port that combines PCI Express and Display Port with a DC connection fo
 
 ### Universtal Type Identifier (UTI)
 OSX's mechanism for identifying and managing file types.
+
+
+# ################# Unsorted #################################
+
+
+
+
+# Desktop Apps
+
+Dashboard	Show dashboard widgets
+Expose
+Expose - Mission Control	Shows all desktops, applications.
+Finder
+Launchpad	Shows iOS style app launcher
+Terminal
+
+
+
+# System Applications
+
+Wireless Diagnostics	Wireless Icon: alt + click -> "open Wireless Diagnostics..."	(Yosemite)
+	/System/Library/CoreServices [/Applications] /Wireless Diagnostics.app
+- Wireless Scanner	Menu: windows -> Scan
+	
+
+
+# Variables
+
+Variable Name	letters, numbers, _				// Nothin else is acceptable
+
+Var - Retrieve	$varName
+
+Var - Set	varName=value
+
+	or...
+	export varName=value
+
+	(export copies the variables to all child processes running in the current shell)
+
+Global Variables	File: /etc/launchd.conf
+
+	Use setenv command
+	setting varName value
+
+
+
+# OS - Executing a Script
+
+Auto Execute Script File	File execute permission must be set.
+	The 1st line needs a hash bang comment.
+
+	Bash (default version):	#! /usr/bin/bash
+
+Run from bash (manual)	bash scriptName
+
+Run from bash (auto) 	Set Execute permission
+	Call path/scriptName
+
+	ex:
+	chmod +x scriptName
+	./scriptName			// When in the same directory use './'
+
+Run App from bash	open -a appName
+
+		-a	Opens an application.
+		-n	Opens a new instance of the application
+
+
+
+# OS - Bash
+
+Startup Script	.bash_profile			// Unlike most bash instances...
+					// This is called every time terminal is opened.
+
+md5	Returns the md5 value of a file.
+
+
+
+# OS - Environment
+
+All Environments	/etc/launchd.conf
+
+Path	
+
+
+
+# Reference - System - Files
+
+Background - Login	/Library/Caches/com.apple.desktop.admin.png
+
+Global Paths	/etc/paths	// Global Paths (each path on a new line).
+Global Shells	/etc/shells
+
+
+
+# Reference - System - Folders
+
+Apps	/Applications
+Apps - App Data	~/Library/Application Support
+Apps - Bash / Command Line	/bin
+Apps - Global Config	/Library/Application Support
+Apps - Startup	/Library/StartupItems
+
+Backgrounds - Desktop	/Library/Desktop Pictures
+
+
+
+### Command Line - To Clipboard	Use: pbcopy
+
+<cb>script | pbcopy<>
+
+Output will be copied into clipboard.
+
+
+
+### OS - Keyboard Layouts
+
+<card><l>/Library/Keyboard Layouts<><>
+
+
+
+### OS - OS X
+
+<card><l>/System<><>
+
+Everything under here belongs to OS X.
+
+
+
+### Startup Items - OS
+
+Run As Root:
+
+<card><l>/Library/LaunchDaemons<><>
+
+MacOS Components, Run As Root:
+
+<card><l>/System/Library/LaunchAgentss<><>
+
+Works But Deprecated:
+
+<card><l>/Library/StartupItems<><>
+
+User Startup Items:
+
+<card><l>~/Library/LaunchAgents<><>
+
+<card><l>$HOME/Library/LaunchAgents<><>
+
+
+
+### User Files / Directories
+
+<card><l>/Users<><>
+
+
+
+#### User Home
+
+Home Directory:
+
+<card>/Users/<v>user_name<><>
+
+Alias To Home Directory:
+
+<card><l>~<><>
+
+<card>$HOME<>
+
+
+
+#### User - Account - Preferences
+
+<card>/Users/<v>user_name<>/Library/Preferences<>
+
+<card>$HOME/Library/Preferences<>
+
+
+
+#### User - Apps
+
+<card>/Users/<v>user_name<>/Applications<>
+
+<card>$HOME/Applications<>
+
+
+
+#### User - App Data / Config
+
+<card>/Users/<v>user_name<>/Library/ApplicationSupport<>
+
+<card>$HOME/Library/ApplicationSupport<>
+
+App Specific:
+
+<card>/Users/<v>user_name<>/Library/ApplicationSupport/<v>app_name<><>
+
+<card>$HOME/Library/ApplicationSupport/<v>app_name<><>
+
+
+
+
+
+#### User - App Config Directory  (Unix Stile)
+
+<card>/Users/<v>user_name<>/.config<>
+
+App Specific Directory:
+
+<card>/Users/<v>user_name<>/.config/<v>app_name<><>
+
+
+
+#### User - Library Folder
+
+<card>/Users/<v>user_name<>/Library<><>
+
+
+
+#### User - Data
+
+<card>/Users/<v>user_name<>/Documents<>
+
+<card>$HOME/Documents<>
+
+
+
+#### User - Desktop
+
+<card>/Users/<v>user_name<>/Desktop<>
+
+<card>$HOME/Desktop<>
+
+
+
+#### User - Downloads
+
+<card>/Users/<v>user_name<>/Downloads<>
+
+<card>$HOME/Downloads<>
+
+
+
+#### User - Keyboard Layouts
+
+<card>/Users/<v>user_name<>/Library/Keyboard Layouts<>
+
+<card><l>$HOME/Library/Keyboard Layouts<><>
+
+
+
+#### User - Startup Scripts
+
+<card>/Users/<v>user_name<>/Library/LaunchAgents<>
+
+<card>$HOME/Library/LaunchAgents<>
+
+<card><l>/Library/LaunchAgents<><>
+
+<card><l>/System/Library/LaunchAgents<><>
+
+
+
+### User - Apps - iOS Backups
+
+<card>~/Library/ApplicationSupport/MobileSync/Backup<>
+
+
+
+### Language - Java
+
+<card><l>/Library/Java/JavaVirtualMachines/<><>
+
+<card><l>/System/Library/Java/JavaVirtualMachines/<><>
+
+
+
+### Language - Java - Locate
+
+Bash Command:
+
+<card><l>/usr/libexec/java_home<><>
+
+
+
+# Reference - App Folders
+
+
+
+### Apps - User Info (Typical)
+
+<card>~/Library/Application Support/<v>app_name<><>
+
+
+
+### App - Ant	
+
+<card><l>/usr/share/ant<><>
+
+
+
+### App - Java
+
+<card><l>/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home<><>
+<card><l>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home<><>
+<card><l>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home<><>
+
+
+
+### App - iTunes
+
+Device Backups:
+
+<card><l>~/Library/Application Support/MobileSync/Backup/<><>
+
+
+
+### App - Keychain
+
+<card>$HOME/Library/Keychains/keychainName.keychain<
+
+
+
+### App - Python 2
+
+<card><l>/System/Library/Frameworks/Python.framework/Versions/<v>..<><><>
+
+File:
+
+<card><l>/usr/bin/python<><>
+
+
+
+### App - Python 3
+
+<card><l>/Library/Frameworks/Python.framework/Versions/<v>...<><><>
+
+File:
+
+<card><l>/usr/local/bin/python3<><>
+
+
+
+### Finder Folder - Audio
+
+<l>/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder<>
+
+
+
+# Reference - App Data Folders
+
+Messages	~/Library/Messages
+
+
+
+# Reference - Application Bundle Identifiers
+
+OmniOutliner	com.omnigroup.OmniOutliner5.MacAppStore
+Text Edit	com.apple.TextEdit
+VLC	org.videolan.vlc
+
+
+
+# Migration
+
+
+### Migrate - Email
+
+
+#### Easy Way…
+
+Setup New Mail Boxes
+
+Then rebuild mailboxes
+	For Each Mailbox
+		Select Mailbox
+		Menu: Mailbox -> Rebuild
+
+
+#### Untested Way…	
+
+New Computer
+
+	Delete Mail Files
+		~/Library/Mail/*
+	Delete Preferences
+		~/Library/Preferences/com.apple.mail*
+
+Original Computer
+
+	Rebuild Mail Boxes
+
+	Open Mail
+
+	For Each Mailbox
+		Select Mailbox
+		Menu: Mailbox -> Rebuild
+
+	Copy
+		~/Library/Mail/*
+		~/Library/Preferences/com.apple.mail*
+
+New Computer
+
+	Copy
+		~/Library/Mail/*
+		~/Library/Preferences/com.apple.mail*
+
+	Restart
+
+
+
+### Migrate - Messages
+
+On Both Computers	Close Messenger.
+
+New Computer
+
+	Delete contents of
+		~/Library/Messages
+
+Copy
+
+	Old Computer
+		~/Library/Messages
+	To New Computer
+		~/Library/Messages
+
+New Computer
+
+	Check / Set File Permissions
+			~/Library/Messages
+
+	Check Links
+		~/Library/Containers/com.apple.ichat/Data/Library/Messages
+			Archive		-> ~/Library/Messages/Archive
+			Attachments	-> ~/Library/Messages/Attachments
+
+New Computer
+
+	Restart
+
+
+
+### Reference - Folders
+
+
+
+### Messages - Folders
+
+Primary	~/Library/Messages
+
+	Archive					// Archive messages
+	Attachments				// Message attachments (photos, videos, etc.)
+
+Archive	~/Library/Containers/com.apple.ichat/Data/Library/Messages
+
+	Archive					// Link to ~/Library/Messages/Archive
+	Attachments				// Link to ~/Library/Messages/Attachments
+
+
+
+### Messages - Files
+
+Message Database
+
+	~/Library/Messages/chat.db
