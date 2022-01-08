@@ -1,5 +1,5 @@
 # MacOS<> SpeedSheet
-<b>What you need, faster.<>
+<b>Find what you need, faster.<>
 
 Covers MacOS related topics.
 
@@ -24,12 +24,34 @@ Shows all system logs.
 
 
 
+### File - Copy
+
+Mouse:
+
+<cb>Option ⌥ + Drag<>
+
+
+This will always create a copy of the file.
+
+
+
 ### File - Delete
 
 <cb>Command ⌘ + Delete<>
 
 
 Moves the file to trash.
+
+
+
+### File - Move
+
+Mouse:
+
+<cb>Command ⌘ + Drag<>
+
+
+This will always move the file
 
 
 
@@ -79,7 +101,7 @@ Sort by name.
 
 
 
-### View - Icon View - change Icon Size
+### View - Icon View - Change Icon Size
 
 Show status bar.
 Use slider (bottom right).
@@ -1655,7 +1677,9 @@ Reset the SMC.
 
 
 
-# Reference - Apps
+# Reference - Useful MacOS Apps
+
+Apps you can download for the mac
 
 
 ### Alinof Timer
@@ -1717,14 +1741,26 @@ Open Source NTFS driver.
 ZX Spectrum Emulator
 
 
-### Giphy
+### Giphy / Giphy Capture
 
 Video Capture to GIF creator.
+@
+@ gif creator
+
+
+### Inkscape
+
+Open source vector graphics editor.
+
+Edits Adobe Illustrator files.
+@
+@ graphics editor
 
 
 ### Kite
 
-AI Based Program Helper
+Not recommended.
+AI Based Program Helper.
 
 
 ### MacDown
@@ -1745,6 +1781,13 @@ PDF Editor
 ### Prepo
 
 iOS Icon Resizer Utility
+
+
+
+### Smart Gif Maker
+
+Creates gifs automatically from videos.
+Has very basic frame editing features (delete, set duration).
 
 
 ### Sonic Pi
