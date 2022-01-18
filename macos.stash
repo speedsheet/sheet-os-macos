@@ -11,6 +11,617 @@ Covers MacOS related topics.
 <cb>:<>
 
 
+# Shortcuts
+
+
+## Keyboard Shortcuts
+
+These shortcuts apply to all applications.
+@
+@ all
+
+
+### Edit - Delete
+
+<card>Delete<>
+
+Deletes the previous letter.
+
+
+### Edit - Delete Forward / Right
+
+<card>fn + Delete<>
+
+Deletes next letter.
+
+
+### Edit - Delete Word 
+
+<card>Option ⌥ + fn + Delete<>
+
+Deletes the previous word.
+
+
+### Edit - Delete Word (Next)
+
+<card>Option ⌥ + fn + Delete<>
+
+Deletes the next word.
+
+
+### Edit - Delete Line To Start
+
+<card>Command ⌘ + Delete<>
+
+Deletes to the start of the line.
+@
+@ beginning
+
+
+### Edit - Delete Line To End
+
+<card>Command ⌘ + fn + Delete<>
+
+Deletes to the end of the line.
+
+
+### Edit - Copy
+
+<card>Command ⌘ + C<>
+@
+@ to clipboard
+
+
+### Edit - Cut
+
+<card>Command ⌘ + X<>
+@
+@ to clipboard
+
+
+### Edit - Paste
+
+<card>Command ⌘ + V<>
+@
+@ from clipboard
+
+
+### Edit - Paste Text Only 
+
+<card>Option ⌥ + Command ⌘ + Shift + V<>
+@
+@ from clipboard
+
+
+### Edit - Cut, Copy, Paste
+
+<card><table><col>Copy<><col>Command ⌘ + C<>
+<col>Cut<><col>Command ⌘ + X<>
+<col>Paste<><col>Command ⌘ + V<>
+<col>Paste (Text Only)<><col>Option ⌥ + Command ⌘ + Shift + V<><><>
+@
+@ to, from clipboard
+
+
+
+### Move - Left One Word
+
+<card>Option ⌥ + Arrow Left<>
+@
+@ cursor
+
+
+### Move - Right One Word
+
+<card>Option ⌥ + Arrow Right<>
+@
+@ cursor
+
+
+### Move - To Line Start
+
+<card>Command ⌘ + Arrow Left<>
+@
+@ cursor
+
+
+### Move - To Line End	
+
+<card>Command ⌘ + Arrow Right<>
+@
+@ cursor
+
+
+### Move - To Page Top
+
+<card>Command ⌘ + Arrow Up<>
+@
+@ cursor, start
+
+
+### Move - To Page Bottom	
+
+<card>Command ⌘ + Arrow Down<>
+@
+@ cursor, end
+
+
+### Select - All
+
+<card>Command ⌘ + A<>
+
+
+### Select - Left One Word
+
+<card>Shift + Option ⌥ + Arrow Left<>
+@
+@ cursor
+
+
+### Select - Right One Word
+
+<card>Shift + Option ⌥ + Arrow Right<>
+@
+@ cursor
+
+
+### Select - To Line Start
+
+<card>Shift + Command ⌘ + Arrow Left<>
+@
+@ cursor
+
+
+### Select - To Line End	
+
+<card>Shift + Command ⌘ + Arrow Right<>
+@
+@ cursor
+
+
+### Select - To Page Top
+
+<card>Shift + Command ⌘ + Arrow Up<>
+@
+@ cursor, start
+
+
+### Select - To Page Bottom	
+
+<card>Shift + Command ⌘ + Arrow Down<>
+@
+@ cursor, end
+
+
+### App - App Preferences
+
+<card>Command ⌘ + ,<>
+
+
+### App - App Quit
+
+<card>Command ⌘ + Q<>
+
+
+### App - App Kill
+
+<card>Option ⌥ + Command ⌘ + Esc<>
+
+
+### App - Window Close
+
+<card>Command ⌘ + W<>
+
+
+### Apps - Hide / Unhide
+
+<card>F11<>
+
+### Apps - Switch Between
+
+<card>Command ⌘ + T<>
+
+
+### Computer - Sleep
+
+<card>Option ⌥ + Command ⌘ + Eject<>
+@
+@ os, mac
+
+
+### Computer - Lock
+
+<card>Command ⌘ + Control ⌃ + Q<>
+
+Older Macs With No Eject Button:
+
+<card>Control ⌃ + Shift + Power<>
+
+Older Macs:
+
+<card>Control ⌃ + Shift + Eject<>
+@
+@ os, mac
+
+
+### Dashboard - Show / Hide
+
+<card>F12<>
+
+
+### Desktop - Slide View (L / R)
+
+<card>Control ⌃ + Left Arrow<>
+
+<card>Control ⌃ + Right Arrow<>
+
+
+### Dialog - Cancel
+
+<card>Escape<>
+
+
+### Dialog - Don't Save
+
+<card>Command ⌘ + Delete<>
+
+
+### Dialog - Goto Directory
+
+<card>Command ⌘ + Shift + G<>
+
+<card>1. Copy Directory Into Clipboard
+2. Command + Shift + G (Opens Directory Option)
+3. Command ⌘ + V (Paste)<>
+
+
+### Dialog - Open - Parent Directory
+
+<card>Command ⌘ + Up Arrow<>
+
+
+### Dialog - Save
+
+<card>Enter<>
+
+
+### Dialog - Save - Goto Directory
+
+<card>1. Copy Directory Into Clipboard
+2. Command ⌘ + Shift + G (Opens Directory Option)
+3. Command ⌘ + V (Paste)<>
+
+Go to a particular directory from within a dialog.
+
+
+### Dock - Show / Hide
+
+<card>Option ⌥ + Command ⌘ + D<>
+
+Toggles Dock.
+@
+@ toggles
+
+
+### File - Create Alias
+
+<card>Option ⌥ + Command ⌘ + Drag To Folder<>
+
+
+### File - Duplicate
+
+<card>Command ⌘ + D<>
+
+
+### File - New Folder
+
+<card>Command ⌘ + Shift + N<>
+
+
+### File - Selected - Summary
+
+<card>Command ⌘ + Control ⌃ + i<>
+
+
+### Page Top
+
+<card>Command ⌘ + Arrow Up<>
+
+Or
+
+<card>fn + Arrow Left<>
+
+
+### Page Bottom
+
+<card>Command ⌘ + Arrow Down<>
+
+Or
+
+<card>fn + Arrow Right<>
+
+
+### Page Down
+
+<card>fn + Arrow Down<>
+
+
+### Page Up
+
+<card>fn + Arrow Up<>
+
+
+### Print Screen - Copy To Clipboard
+
+<card>Command ⌘ + Control ⌃ + Shift + 3<>
+@
+@ copy
+
+
+### Print Screen - Copy To File
+
+<card>Command ⌘ + Shift + 3<>
+
+Copys to desktop
+@
+@ copy
+
+
+### Print Screen - Copy Area to Clipboard
+
+<card>Command ⌘ + Control ⌃ + Shift + 4<>
+@
+@ copy
+
+
+### Print Screen - Copy Area to File
+
+<card>Command ⌘ + Shift + 4, Select Area<>
+
+Copys to desktop.
+@
+@ copy
+
+
+### Print Screen - Copy Window To File
+
+<card>Command ⌘ + Shift + 4
+Space
+Select Window With Mouse<>
+
+Copys to desktop.
+@
+@ copy
+
+
+### Siri
+
+<card>Hold Command ⌘ + Space<>
+
+
+### Window - Hide
+
+<card>Command ⌘ + h<>
+
+
+### Window - Hide - All Others
+
+<card>Command ⌘ + Option ⌥ + h<>
+
+
+### Window - Move - Background Window Only / No Focus
+
+<card>Command ⌘ + Mouse Move<>
+
+
+### Window - Zoom - Full Screen
+
+<card>Command ⌘ + Control ⌃ + F<>
+
+Toggles to and from full screen mode.
+
+
+
+## Mouse
+
+
+### Audio - Select Device
+
+<card>Alt + Right Click<>
+
+Displays all available audio sources.
+
+
+### Click - Right Click
+
+<card>Press down 2 fingers side by side.<>
+
+
+### Click - Right Click Drag
+
+<card>Press down 2 fingers side by side, drag together.<>
+
+
+
+## Trackpad Gestures
+
+
+### Gesture - Double Click
+
+<card>Click 2 Fingers<>
+
+
+### Scroll
+
+<card> Move 2 Fingers
+Move in Scroll Direction<>
+
+
+### Zoom - In
+
+<card>2 Finger - Pinch In<>
+
+
+### Zoom - Out
+
+<card>2 Finger - Pinch Out<>
+
+
+### Spaces - Next on Left
+
+<card>3 Finger Swipe Right.<>
+
+
+### Spaces - Next on Right
+
+<card>3 Finger Swipe Left.<>
+
+
+### Spaces - View All
+
+<card>4 Finger Swipe Up<>
+
+
+### App Launcher - View	3
+
+<card>Fingers + Thumb - Together<>
+
+
+### App Launcher - Dismiss
+
+<card>3 Fingers + Thumb - Apart<>
+
+
+### Desktop View - Change
+
+<card>3 or 4 Fingers - Left / Right<>
+
+Display Desktop or Dashboard
+
+
+### Desktop Overview - View
+
+<card>3 or 4 Fingers - Up<>
+
+
+### Desktop Overview - Dismiss
+
+<card>3 or 4 Fingers - Down<>
+
+
+### Notification - Dismiss
+
+<card>2 Fingers - Swipe Right<>
+
+
+
+# Dictation
+
+
+### Diction - Start
+
+Press:
+
+<card>Fn, Fn<>
+
+
+### Diction - End
+
+Press:
+
+<card>Fn<>
+
+
+### Dictation - Add Number
+
+Say:
+
+<card>"Number <v>10<>"<>
+
+
+### Dictation - Add Upper Case Letter
+
+Say:
+
+<card>"Upper Case <v>A<>"<>
+
+
+### Dictation - Add Tab
+
+Say:
+
+<card>"Tab Key"<>
+
+
+### Dictation - Add New Line
+
+Say:
+
+<card>"New Line"<>
+
+
+### Dictation - New Paragraph
+
+Say:
+
+<card>"New Paragraph"<>
+
+
+### Dictation - Delete - Character
+
+Say:
+
+<card>"Delete That"<>
+
+
+### Dictation - Delete - Last Item
+
+Say:
+
+<card>"Scratch That"<>
+
+
+### Dictation - Prevent Next Space
+
+Say:
+
+<card>"No Space"<>
+
+Prevents the next space between this and the next word.
+
+
+### Dictation - Set All Caps - On
+
+Say:
+
+<card>"All Caps On"<>
+
+
+### Dictation - Set All Caps - Off
+
+Say:
+
+<card>"All Caps Off"<>
+
+
+### Dictation - Set All Caps - One Word
+
+Say:
+
+<card>"All Caps"<>
+
+Capitalizes the next word.
+
+
+### Dictation - Set Caps
+
+Say:
+
+<card>"Caps"<>
+
+Sets caps for the next letter.
+
+
 
 # App - Console
 
@@ -23,19 +634,30 @@ Shows all system logs.
 # App - Finder
 
 
+### Finder - File - Copy
 
-### File - Copy
-
-Mouse:
+Mouse<super>1<>:
 
 <cb>Option ⌥ + Drag<>
+Keyboard:
+
+<cb><table><col>Command ⌘ + C<><col>(Copy)<>
+<col>Command ⌘ + V <><col>Paste)<><><>
 
 
 This will always create a copy of the file.
 
 
+1 - Mouse / Holding Option ⌥
 
-### File - Delete
+<in-2>It is not necessary when copying files between drives as copying is the default behaviour. Just do a simple drag.
+
+Copy Between Drives:
+
+<cb>Simple Drag<><>
+
+
+### Finder - File - Delete
 
 <cb>Command ⌘ + Delete<>
 
@@ -44,88 +666,170 @@ Moves the file to trash.
 
 
 
-### File - Move
+### Finder - File - Move
 
-Mouse:
+Mouse<super>1<>:
 
 <cb>Command ⌘ + Drag<>
 
+Keyboard:
 
-This will always move the file
+<cb><table><col>Command ⌘ + X<><col>(Cut)<>
+<col>Command ⌘ + V <><col>Paste)<><><>
 
-
-
-### File - Path - Copy
-
-Right Click -> Info Popup
-Option + "Copy file_name As Pathname"
+This will always move the file.
 
 
+1 - Mouse / Holding Command ⌘
 
-### Show Hidden
+<in-2>It is not necessary when moving files between folders on the same drive as moving is the default behaviour. Just do a simple drag.
 
-Command ⌘ + Shift + .	
+Move On Same Drive:
 
-
-### Show Path
-
-Menu -> Edit -> Show Path Bar
+<cb>Simple Drag<><>
 
 
-### Show Status
+### Finder - File Path - Copy
 
-Bar	Menu -> Edit -> Show Status Bar
+<card>Right Click (Popup Menu)
+Press and Hold [ Alt ⌥ ]
+Select 'Copy "<v>file_name<>"" as Pathname'<>
+
+This will copy the file's path into the clipboard.
 
 
+### Finder - Files - Show Hidden
 
-### Sort - Folders Together
+<card>Command ⌘ + Shift + .	<s>(period)<><>
 
-Menu -> File -> Preferences
+
+### Finder - Files - Show Summary
+
+For Selected Files:
+
+<card>Command ⌘ + Control ⌃ + i<>
+
+Shows a summary of the number of files, total file size, etc..
+@
+@ view, see
+
+
+### Finder - Folder - Go To
+
+Keyboard:
+
+<card>Command ⌘ + Shift + G<>
+
+
+### Finder - Folder - Go To Parent
+
+Keyboard:
+
+<card>Command ⌥ + Up<>
+
+
+### Finder - Folder - Go Into Current
+
+Keyboard:
+
+<card>Command ⌥ + Down<>
+
+Mouse:
+
+<card>Double Click<>
+
+
+### Finder - Folders - Merge
+
+Mouse:
+
+<cb>Option ⌥ + Drag Folder<>
+
+Drag source folder onto the target folder while holding the [ Option ⌥ ] key.
+
+
+### Finder - Show Path
+
+<card>Menu:
+-> Edit
+-> Show Path Bar<>
+
+
+### Finder - Show Status Bar
+
+<card>
+Menu:
+-> Edit
+-> Show Status Bar<>
+
+
+### Finder - Toolbar - Customize
+
+<card>Toolbar
+-> Right Click
+-> Customize Toolbar...<>
+
+
+### Finder - View - Folders Together
+
+<card>Menu
+-> File
+-> Preferences
 Tab: Advanced
 "Keep folders on top:"
-Check: In windows when sorting by name.
+Check: In windows when sorting by name.<>
+
+This will list the folders together instead of spread within the files.
 @
 @ Directories
 
 
+### Finder - View - Icon View - Use Full Width
 
-### Toolbar - Customize
+Set:
 
-Toolbar -> Right Click -> Customize Toolbar...
-
-
-
-### View - Icon View - Use Full Width
-
-Sort by name.
-
+<card>Sort by Name<>
 
 
 ### View - Icon View - Change Icon Size
 
-Show status bar.
-Use slider (bottom right).
+<card>Show Status Bar
+Use Slider (bottom right)<>
 
 
 
 # App - Keychain
 
-login	Default for account.
-		Uses same password for account.
+App Name:
 
-Login keychain access	unlocked by default when logged in.
+<card>Keychain Access<>
 
-Local Items	Locally saved password
+
+
+### Keychain - Login / Access
+
+Password:
+
+<card>User's Password<>
+
+Uses same password as the user's account.
+
+
+### Keychain - Login Keychain Access
+
+Unlocked by default when logged in.
 
 
 
 # App - Launchd / Launchctl
 
-What is it	A powerful tool that runs OS X tasks and jobs.
-		It is like init, cron, ta, init.d(SysVinit), upstart and systems all in one with even more.
 
-		Note: Can not be called directly.
-		Note: Use launchctl
+Launchd: What is it:
+A powerful tool that runs OS X tasks and jobs.
+It is like init, cron, ta, init.d(SysVinit), upstart and systems all in one with even more.
+
+Note: Can not be called directly.
+Note: Use launchctl
 
 Dir - OS X Tasks	/System/Library/LaunchDaemons	// Don't touch this.
 		/System/Library/LaunchAgents	// Don't touch this either.
@@ -164,12 +868,15 @@ Sample plist - Starts at Login	<?xml version="1.0" encoding="UTF-8"?>
 
 ### Library - Sync
 
-Menu:
-File
-Preferences...
-General	(Tab)
+<card>Menu:
 
-Check: "Library:" <v>_<> "Sync Library"
+File
+-> Preferences...
+-> General	(Tab)
+
+Check: "Library:" <v>_<> "Sync Library"<>
+
+Forces Apple Music to sync the music library with devices.
 
 
 
@@ -206,26 +913,26 @@ or
 
 Add To .bash_profile
 
-<cb>export CLICOLOR=1
+<card>export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 
 
 
 ### Terminal - Shell - Show
 
-<cb>echo ${SHELL}<>
+<card>echo ${SHELL}<>
 
 
 
 ### Terminal - Shell - Set Bash
 
-<cb>chsh -s /bin/bash<>
+<card>chsh -s /bin/bash<>
 
 
 
 ### Terminal - Shell - Set Zsh
 
-<cb>chsh -s /bin/zsh<>
+<card>chsh -s /bin/zsh<>
 
 
 
@@ -236,13 +943,13 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 
 ### New - Tab
 
-<cb>Command ⌘ + T<>
+<card>Command ⌘ + T<>
 
 
 
 ### New - Window
 
-<cb>Command ⌘ + N<>
+<card>Command ⌘ + N<>
 
 
 
@@ -254,37 +961,37 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 
 ### Close - Tab
 
-<cb>Command ⌘ + W<>
+<card>Command ⌘ + W<>
 
 
 
 ### Screen - Clear All
 
-<cb>Command ⌘ + K<>
+<card>Command ⌘ + K<>
 
 
 
 ### Cursor - Delete Before
 
-<cb>Control ⌃ + U<>
+<card>Control ⌃ + U<>
 
 
 
 ### Cursor - Delete After
 
-<cb>Control ⌃ + K<>
+<card>Control ⌃ + K<>
 
 
 
 ### Cursor - Delete All
 
-<cb>Control ⌃ + C<>
+<card>Control ⌃ + C<>
 
 
 
 ### Cursor - Move - To Start
 
-<cb>Control ⌃ + A<>
+<card>Control ⌃ + A<>
 @
 @ beginning, first
 
@@ -292,414 +999,10 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 
 ### Cursor - Move - To End
 
-<cb>Control ⌃ + E<>
+<card>Control ⌃ + E<>
 @
 @ last
 
-
-
-# Shortcuts
-
-
-
-## Keyboard Icons
-
-Apple	
-Command ⌘	⌘
-Option ⌥	⌥
-Control ⌃	⌃
-Shift	⇧
-Caps Lock	⇪
-
-
-
-## Boot Keys
-
-Boot Device Selector	Option ⌥
-PRAM Reset	Option ⌥ + Command ⌘ + P + R
-Start - Bootable Device	C						// Such as CD, DVD, USB Thumb Drive
-Start - Diagnostics	D
-Start - Recovery Mode	Command ⌘ + R				// Password change, System Utils
-Start - Safe Mode	Shift
-Start - Single User Mode	Command ⌘ + S				// Can be used to access
-Start - Verbose Mode	Command ⌘ + V
-
-
-
-## Gestures
-
-Double Click	2 Fingers - Click
-
-Scroll	2 Fingers - Scroll Direction
-
-Zoom - In	2 Finger - Pinch In
-Zoom - Out	2 Finger - Pinch Out
-
-Spaces - Next on Left	3 Finger Swipe Right.
-Spaces - Next on Right	3 Finger Swipe Left.
-Spaces - View All	4 Finger Swipe Up
-
-App Launcher - View	3 Fingers + Thumb - Together
-App Launcher - Dismiss	3 Fingers + Thumb - Apart
-
-Desktop View - Change	3/4 Fingers - Left / Right		// Display Desktop or Dashboard
-Desktop Overview - View	3/4 Fingers - Up
-Desktop Overview - Dismiss	3/4 Fingers - Down
-
-
-
-## Keyboard
-
-
-### Edit - Copy
-
-Command ⌘ + C
-
-
-### Edit - Paste
-
-Command ⌘ + V
-
-
-### Edit - Line Start
-
-Command ⌘ + Arrow Left
-
-
-### Edit - Line End	
-
-ommand ⌘ + Arrow Right
-
-
-### Edit - Cursor Left One Word
-
-Option ⌥ + Arrow Left
-
-
-### Edit - Cursor Right One Word
-
-Option ⌥ + Arrow Right
-
-
-
-### Edit - Delete Right
-
-fn + Delete
-
-
-### PC - Sleep
-
-Option ⌥ + Command ⌘ + Eject
-
-
-### App - App Preferences
-
-Command ⌘ + ,
-
-
-### App - App Quit
-
-Command ⌘ + q
-
-
-### App - App Kill
-
-Option ⌥ + Command ⌘ + Esc
-
-
-### App - Window Close
-
-Command ⌘ + w
-
-
-### Apps - Hide / Unhide
-
-F11
-
-### Apps - Switch Between
-
-Command ⌘ + t
-
-
-### Dashboard - Show / Hide
-
-F12
-
-
-
-### Delete
-
-<cb>fn + Delete<>
-
-
-
-### Delete Right / Forward Delete
-
-<cb>fn + Delete<>
-
-
-
-### Desktop - Slide View (L / R)
-
-Control ⌃ + Left Arrow / Right Arrow
-
-
-### Dialog - Cancel
-
-Escape
-
-
-### Dialog - Don't Save
-
-Command ⌘ + Delete
-
-
-### Dialog - Open - Goto Directory
-
-Command ⌘ + Shift + G
-
-
-### Dialog - Open - Parent Directory
-
-Command ⌘ + Up Arrow
-
-
-### Dialog - Save
-
-Enter
-
-### Dialog - Save - Goto Directory
-
-[ Paste ] / Command ⌘ + V	// Paste directory from clipboard.
-
-
-### Dictation - Start
-
-Fn, Fn
-
-
-### Dictation - End
-
-Fn	
-
-
-### Dock - Show / Hide
-
-Option ⌥ + Command ⌘ + D
-
-
-### OS - Lock
-
-Command ⌘ + Control ⌃ + Q
-Control ⌃ + Shift + Power	// For older macs with no eject button.
-Control ⌃ + Shift + Eject	// Older Macs
-
-
-### File - Create Alias
-
-Option ⌥ + Command ⌘ + Drag To Folder
-
-
-### File - Duplicate
-
-Command ⌘ + D
-
-
-### File - New Folder
-
-Command ⌘ + Shift + N
-
-
-### File - Selected - Summary
-
-Command ⌘ + Control ⌃ + i
-
-
-### Page Top
-
-<cb>Command ⌘ + Arrow Up<>
-
-Or
-
-<cb>fn + Arrow Left<>
-
-
-### Page Bottom
-
-<cb>Command ⌘ + Arrow Down<>
-
-Or
-
-<cb>fn + Arrow Right<>
-
-
-### Page Down
-
-<cb>fn + Arrow Down<>
-
-
-### Page Up
-
-<cb>fn + Arrow Up<>
-
-
-### Print Screen to Clipboard
-
-Command ⌘ + Control ⌃ + Shift + 3
-@
-@ copy
-
-
-### Print Screen to File
-
-Command ⌘ + Shift + 3	// Copied to desktop
-@
-@ copy
-
-
-### Print Screen - Area to Clipboard
-
-Command ⌘ + Control ⌃ + Shift + 4
-@
-@ copy
-
-
-### Print Screen - Area to File
-
-Command ⌘ + Shift + 4, Select Area	// Copied to desktop
-@
-@ copy
-
-
-### Print Screen - Window To File
-
-Command ⌘ + Shift + 4
-Space
-Select Window With Mouse	// Copied to desktop
-@
-@ copy
-
-
-### Siri
-
-Hold Command ⌘ + Space
-
-
-### Window - Hide
-
-Command ⌘ + h
-
-
-### Window - Hide - All Others
-
-Command ⌘ + Option ⌥ + h
-
-
-### Window - Move - Background Window Only / No Focus
-Command ⌘ + Mouse Move
-
-
-### Window - Zoom - Full Screen
-
-Command ⌘ + Control ⌃ + F	// Toggles to and from full screen mode.
-
-
-## Keyboard - Finder
-
-Files - Hidden - Show	Command ⌘ + Shift + .
-Folder - Go To	Command ⌘ + Shift + G
-File - Selected - Summary	Command ⌘ + Control ⌃ + i
-	
-
-
-## Keyboard - Terminal
-
-New - Tab	Command ⌘ + T
-New - Window	Command ⌘ + N
-Close	Control ⌃ + D
-Close - Tab	Command ⌘ + W
-
-Screen - Clear All	Command ⌘ + K
-
-Cursor - Delete Before	Control ⌃ + U
-Cursor - Delete After	Control ⌃ + K
-Cursor - Delete All	Control ⌃ + C
-Cursor - Move - To Beginning	Control ⌃ + A
-Cursor - Move - To End	Control ⌃ + E
-
-
-
-## Mouse - General
-
-
-### Audio - Select Device
-
-Alt + Right Click					// Displays all available audio sources
-
-Click - Right Click	Press down 2 fingers side by side.
-Click - Right Click Drag	Press down 2 fingers side by side, drag together.
-
-
-### Notification - Dismiss
-
-Trackpad - 2 fingers swipe right.
-
-
-### Scroll - Up Down
-
-Trackpad - 2 fingers side by side - drag up/down.
-	
-
-## Mouse - Finder
-
-Folders - Merge	Option ⌥ + Drag
-
-
-## Mouse - Apps
-
-Path Finder - File List Summary	Right Click
-Control ⌃ + Summary Info			// Summary will show when Control ⌃ is pressed.
-
-
-# Dictation
-
-
-### Diction - Start
-
-Press:
-
-<cb>Fn, Fn<>
-
-
-### Diction - End
-
-Press:
-
-<cb>Fn<>
-
-
-### Delete - Character
-
-Say
-
-<cb>"Delete That"<>
-
-
-### Delete - Last Item
-
-Say
-
-<cb>"Scratch That"<>
-
-
-### New Line
-
-Say
-
-<cb>"New Line"<>
-
-
-### New Paragraph
 
 
 # How To
@@ -852,6 +1155,20 @@ See: Spaces (Below)
 
 
 
+### Device Handoff - Enable
+
+Enables handoff between your iCloud devices.
+
+<card>System Preferences...
+-> General
+
+Enable:
+"Allow Handoff between this Mac and your iCloud devices"<>
+@
+@ copy, paste, clipboard, devices
+
+
+
 ### Dictionary - Add
 
 Open TextEdit.
@@ -899,12 +1216,13 @@ The link is created in the current directory.
 
 <cb>rsync -avE --delete <v>source_dir<>/ <v>target_parent_dir<>/<>
 
-
-	-a	Archive Mode
-	-v	Verbose
-	-E	Extended Attributes
-	@
-	@ folder
+<table><col><b>Option<><><col><b>Purpose<><>
+<col> <>
+<col>-a<><col>Archive Mode<>
+<col>-v<><col>Verbose<>
+<col>-E<><col>Extended Attributes (Required for Macs)<><>
+@
+@ folder, mirror, duplicate, sync, rsync --delete, -E
 
 
 
@@ -918,8 +1236,12 @@ The link is created in the current directory.
 
 ### Directory - Share - With Windows	
 
--> System Preferences -> Sharing -> File Sharing -> Options
--> "Share files and folders using SMB"
+<card>Menu:
+-> System Preferences
+-> Sharing
+-> File Sharing
+-> Options
+-> "Share files and folders using SMB"<>
 @
 @ folder
 
@@ -955,13 +1277,17 @@ See: Spaces (Below)
 
 
 
-### Drive - SMB - Mount
+### Drive - SMB Drive - Mount
 
 <cb>mount -t smbfs //username:password@<v>server_name<>/<v>share_name<> /Volumes/<v>mount_directory<><>
 
-Note: MountDir must exist.
 
-Note: <v>server_name<> may be in the form of <v>server_name<><b>.local<> especially for windows machines.
+Mounts a network drive over the network.
+
+The drive <c><v>mount_drive<><> must exist.
+The server name may be in the form of <c><v>server_name<><b>.local<> especially for windows machines.
+
+<in><c><v>server_name<><b>.local<>
 
 
 
@@ -1618,10 +1944,26 @@ Swedish			Female			Alva<>
 rm -rf ~/.Trash/*
 
 
+
+### Universal Clipboard - Enable
+
+To enable universal clipboard between your devices, enable Handoff.
+
+<card>System Preferences...
+-> General
+
+Enable:
+"Allow Handoff between this Mac and your iCloud devices"<>
+@
+@ copy, paste
+
+
+
 ### Users - List
 
 dscl . list /Users | grep -v '^_' 						// Simple list.
 dscacheutil -q user | grep -A 3 -B 2 -e uid:\ 5'[0-9][0-9]' 		// More detailed.
+
 
 
 ### Variables - Global User - Set
@@ -1648,6 +1990,7 @@ Sample plist File	<?xml version="1.0" encoding="UTF-8"?>
 	</plist>
 
 
+
 ### Video - Compress
 
 Open In QuickTime
@@ -1655,13 +1998,14 @@ Open In QuickTime
 	Set options.
 
 
+
 ### Window - Off Screen - Recover
 
 Menu -> Window -> Zoom
 
 
-# Troubles Shooting
 
+# Troubles Shooting
 
 
 ### High CPU / Computer Sluggish
@@ -1674,6 +2018,74 @@ Check the vents are clear and air can move around.
 ### Password - Not Accepted In System Preferences
 
 Reset the SMC.
+
+
+
+# Reference - Bootup Keyboard Commands
+@
+@ bootup, startup, booting, keyboard, shortcuts
+
+
+
+### Boot - Device Selector
+
+<card>Option ⌥<>
+
+
+### Boot - PRAM Reset
+
+<card>Option ⌥ + Command ⌘ + P + R<>
+
+
+### Boot - Start - Bootable Device
+
+<card>C<>
+
+Such as CD, DVD, USB Thumb Drive
+
+
+### Boot - Start - Diagnostics
+
+<card>D<>
+
+
+### Boot - Start - Recovery Mode
+
+<card>Command ⌘ + R<>
+
+Password change, System Utils
+
+
+### Boot - Start - Safe Mode
+
+<card>Shift<>
+
+
+### Boot - Start - Single User Mode
+
+<card>Command ⌘ + S<>
+
+Can be used to access
+
+
+### Boot - Start - Verbose Mode
+
+<card>Command ⌘ + V<>
+
+
+
+# Reference - Keyboard Icons
+
+<card><table><col>Apple		<><col><>
+<col>Command<><col>⌘<>
+<col>Option<><col>⌥<>
+<col>Control<><col>⌃<>
+<col>Shift<><col>⇧<>
+<col>Caps Lock<><col>⇪<><><>
+@
+@ apple, command, option, control, shift, caps lock, characters
+
+
 
 
 
