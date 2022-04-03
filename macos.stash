@@ -515,6 +515,22 @@ Display Desktop or Dashboard
 
 
 
+## Trackpad - Settings
+
+
+
+### Trackpad - Enable 3 Finger Drag
+
+<card>Preferences -> Accessibility -> Pointer Control
+
+Mouse & Track
+'Trackpad Options'
+
+'Enable dragging'	- check
+Select 'three finger drag'<>
+
+
+
 # Dictation
 
 
@@ -1344,6 +1360,100 @@ putty						// brew install putty.
 
 
 
+### File - Extended Attributes - List Attributes
+
+<cb>xattr <v>file_name<><>
+
+
+Lists all extended attributes for the file.
+@
+@ xattr
+@ file, view, show, print, get
+
+
+
+### File - Extenderd Attribute - Sow Value
+
+<cb>xattr -p <v>attribute_name<> <v>file_name<><>
+
+
+Shows the value for the given file.
+
+
+Example:
+
+Where From:
+
+<cb>xattr -p <v>com.apple.metadata:kMDItemWhereFroms<> <v>file_name<><>
+@
+@ xattr -p
+@ file, show, view, get
+
+
+
+### File - Extended Attribute - Delete
+
+<cb>xattr -d <v>attribute_name<> <v>file_name<><>
+
+
+Deletes a single extended attribute.
+@
+@ xattr, -d
+@ file, remove
+
+
+
+### File - Extended Attribute - Delete Recursively
+
+<cb>xattr -rd <v>attribute_name<> <v>directory_name<><>
+
+
+Traverses a directory recunsively and removes the attribute from all files.
+@
+@ xattr, -d, -r
+@ file, remove
+
+
+
+### File - Extended Attribute - Delete All
+
+<cb>xattr -c <v>file_name<><>
+
+
+Deletes all extended attributes on a file.
+@
+@ xattr, -c
+@ file, remove, clear
+
+
+
+### File - Extended Attribute - Remove Quarantine
+
+<cb>xattr -d com.apple.quarantine <v>file_name<><>
+
+
+Deletes the quarantine attribute on a file.
+@
+@ xattr, -d, com.apple.quarantine
+@ file, delete, download
+
+
+
+### File - Extendend Attributes
+
+<card><table><col>Directory is Bundle<><col>com.apple.FinderInfo<>
+<col>Quarantine<><col>com.apple.quarantine<>
+<col>Where From<><col>com.apple.metadata:kMDItemWhereFroms<><><>
+
+
+<card><table><col>com.apple.FinderInfo<><col>Directory is Bundle<>
+<col>com.apple.quarantine<><col>Quarantine<>
+<col>com.apple.metadata:kMDItemWhereFroms<><col>Where From<><><>
+@
+@ reference
+
+
+
 ### File - MD5 Value
 
 <cb>md5 <v>file_name<><>
@@ -1779,6 +1889,13 @@ Wait up to 2 minutes to see network traffic.
 <cb>sysctl -n machdep.cpu.brand_string<>
 
 
+Example Response:
+
+<cb>Apple M1<>
+
+<cb>Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz<>
+
+
 ### System - Devices / Sys Info
 
 <cb>system_profiler<>
@@ -1861,7 +1978,9 @@ Uncheck “Use smart quotes and dashes”
 
 <cb>say "<v>text to say aloud<>"<>
 
-Text to Speech
+Text to Speech.
+
+Uses Siri voice by default.
 @
 @ speak alowed, speech
 
@@ -2071,6 +2190,58 @@ Can be used to access
 ### Boot - Start - Verbose Mode
 
 <card>Command ⌘ + V<>
+
+
+
+# Reference - File Systems
+
+Use APFS, unless compatibility is requiref for older macOses. Then use HFS+.
+
+
+
+### Apple File System (APFS)
+
+The current file system for all Apple devices.
+
+<table><col>Created<><col>2017<>
+<col> <>
+<col>Date Range<><col>1970-01-01 .. 2554-07-21<>
+<col>Size Limit<><col>2GB<><>
+
+Used By:
+
+<in>macOS Sierra (2017) (and greater)
+iOS 10.3 (and greater)
+iPadOS (all versions)
+toOS 10.2 (and greater)
+watchOS 3.2 (and greater)<>
+
+Wiki:
+<l>https://en.wikipedia.org/wiki/Apple_File_System<>
+
+
+
+### Hierarchical File System (HFS) (Mac OS Standard)
+
+<table><col>Created<><col>1985<>
+<col> <>
+<col>Date Range<><col>1904-01-01 .. 2040-02-06<>
+<col>Size Limit<><col>2GB<><>
+
+Wiki:
+<l>https://en.wikipedia.org/wiki/Hierarchical_File_System<>
+
+
+
+### Hierarchical File System Plus (HFS+) (Mac OS Extended)
+
+<table><col>Created<><col>1985<>
+<col> <>
+<col>Date Range<><col>1904-01-01 .. 2158-02-06<>
+<col>Size Limit<><col>8 EB (Exabytes)<><>
+
+Wiki:
+<l>https://en.wikipedia.org/wiki/HFS_Plus<>
 
 
 
@@ -2365,6 +2536,24 @@ M1 Mac support.
 
 ### ABI
 Application Bundle Identifier
+
+
+
+### APFS
+Apple File System
+
+
+
+### HFS
+Hierarchical File System.
+
+Also Called: Mac OS Standard
+
+
+### HFS+
+Hierarchical File System Plus
+
+Also Called: Mac OS Extended
 
 
 ### NVRAM
