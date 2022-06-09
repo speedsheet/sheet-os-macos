@@ -303,6 +303,17 @@ Toggles Dock.
 @ toggles
 
 
+
+### Dock - Restart
+
+Command-line
+
+<cb>killall Dock<>
+@
+@ killall
+
+
+
 ### File - Create Alias
 
 <card>Option ⌥ + Command ⌘ + Drag To Folder<>
@@ -1024,48 +1035,61 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 # How To
 
 
-### App - Bundle Identifier - Get
+### App - Application Bundle Identifier - Get
 
-My script: app.bundle.id path/AppName.app
+<cb>mdls -name kMDItemCFBundleIdentifier -r <v>path/app_name.app<><>
 
-mdls -name kMDItemCFBundleIdentifier -r path/AppName.app
+
+Example app.bundle.id (application.bundle.identifier):
+
+<cb>com.apple.TextEdit<>
+@
+@ application.bundle.identifier, app.bundle.id
+
 
 
 ### App - Recent Docs - Clear
 
-Open App
+<card>Open App
 
-Menu: File -> Open Recent -> Clear
+Menu:
+-> File
+-> Open Recent
+-> Clear<>
 
 - or -
 
-defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
+<cb>defaults delete <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments<>
+
 
 
 ### App - Recent Docs - Disable
 
-Find App's Application Bundle Identifier			// Looks like com.apple.
-
-My script: app.recent.disable application.bundle.identifier
-
-defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
-defaults write application.bundle.identifier NSRecentDocumentsLimit 0
-defaults write application.bundle.identifier.LSSharedFileList RecentDocuments -dict-add MaxAmount 0
+<cb>defaults delete <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments
+defaults write <v>app.bundle.identifier<> NSRecentDocumentsLimit 0
+defaults write <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments -dict-add MaxAmount 0<>
 
 Restart the dock:
-	killall Dock
 
-- or -
+<cb>killall Dock<>
 
-recent.disable application.bundle.identifier
+
+Example app.bundle.id (application.bundle.identifier):
+
+<cb>com.apple.TextEdit<>
+
+To Get Identifier, See: <l#>App - Application Bundle Identifier - Get<>
+
 
 
 ### App - Recent Docs - Enable
 
-Find App's Application Bundle Identifier			// Looks like com.apple.
+<cb>defaults delete <v>app.bundle.identifier<> NSRecentDocumentsLimit
+defaults delete <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments<>
 
-defaults delete application.bundle.identifier NSRecentDocumentsLimit
-defaults delete application.bundle.identifier.LSSharedFileList RecentDocuments
+
+To Get Identifier, See: <l#>App - Application Bundle Identifier - Get<>
+
 
 
 ### App - Open
@@ -1077,13 +1101,10 @@ open -n application.app param1...
 	-n	Opens a new instance of the application
 
 
+
 ### App - ABI - Get
 
 /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' “path.AppName.app/Contents/Info.plist"
-
-- or -
-
-abiinfo path.AppName 					// My script.
 
 - or -
 
@@ -1372,7 +1393,7 @@ Lists all extended attributes for the file.
 
 
 
-### File - Extenderd Attribute - Sow Value
+### File - Extenderd Attribute - Show Value
 
 <cb>xattr -p <v>attribute_name<> <v>file_name<><>
 
@@ -2270,6 +2291,12 @@ Apps you can download for the mac
 Timer App
 
 
+### AquaTerm
+
+Graphics Terminal.
+Displays vector graphics, text, images.
+
+
 ### balenaEtcher
 
 Copies IMG files to devices such as SD Cards
@@ -2381,6 +2408,11 @@ Music Programming App
 ### Swinsian
 
 iTunes Replacement Music Player
+
+
+### Tabby
+
+A terminal application with a nice GUI.
 
 
 ### TeXWorks
@@ -2519,13 +2551,19 @@ Wiki:
 Dropped support for 32 bit apps.
 
 
-### Mac OS X 11 (Big Sur)
+### MacOS 11 (Big Sur)
 
 2020.11.12
 
 Major overhaul.
 Look and feel updated.
 M1 Mac support.
+
+
+### MacOS 12 (Monterey)
+
+2021.10.25
+
 
 
 # Glossary
@@ -2612,6 +2650,18 @@ Unix based link between the shortcut and the target file. Links are by path. Mov
 See: File Link - Hard Link
 
 
+### Handoff
+Allows you to continue tasks from one Apple device to another.
+
+Requirements:
+
+<*>Both Devices:
+Use the Same iCloud Account
+Bluetooth is On
+Wifi is On
+Handoff Is Enabled<>
+
+
 ### Launch Services
 The os component responsible for figuring out what application to launch for a given file or file type.
 
@@ -2655,6 +2705,15 @@ Also Called: PRAM (Parameter RAM)
 @ NV Ram, NVRAM, PRAM, P RAM
 
 
+### Sidecar
+Allows a Mac to use an iPad as a second display.
+
+Requires both devices use the same iCloud account.
+
+Official Apple Doc:
+<l>https://support.apple.com/en-us/HT210380<>
+
+
 ### Spaces
 OSX's ability to create multiple desktops or spaces. Switch between them by using three fingered swipes.
 
@@ -2677,8 +2736,32 @@ The security chip on Macs (-2020)
 A serial port that combines PCI Express and Display Port with a DC connection for power over one cable. Supports up to 6 peripherals. Has 20 pins.
 
 
+### Universal Control
+Allows a single keyboard and mouse to control multiple macs and iPads at the same time.
+
+Implemented in MacOS 12 (Montery).
+
+Official Apple Doc:
+<l>https://support.apple.com/en-us/HT212757<>
+
+
+
+### Universal Clipboard
+Allows Apple devices to share the clipboard between them.
+
+Copy on one device, then seamlessly paste that content on another closeby device.
+
+Requires both devices to be on the same iCloud account.
+
+Apple Official Doc:
+<l>https://support.apple.com/guide/mac-help/copy-and-paste-between-devices-mchl70368996/mac<>
+@
+@ copy paste
+
+
 ### Universtal Type Identifier (UTI)
 OSX's mechanism for identifying and managing file types.
+
 
 
 # ################# Unsorted #################################
@@ -2816,7 +2899,7 @@ Run As Root:
 
 MacOS Components, Run As Root:
 
-<card><l>/System/Library/LaunchAgentss<><>
+<card><l>/System/Library/LaunchAgents<><>
 
 Works But Deprecated:
 
@@ -2830,13 +2913,24 @@ User Startup Items:
 
 
 
-### User Files / Directories
+## System Files / Directory
+
+
+
+#### System - Launch Agents / Startup Directory
+
+<cb>/Library/LaunchAgents<>
+
+
+
+
+## User Files / Directories
 
 <card><l>/Users<><>
 
 
 
-#### User Home
+### User Home
 
 Home Directory:
 
@@ -2850,7 +2944,7 @@ Alias To Home Directory:
 
 
 
-#### User - Account - Preferences
+### User - Account - Preferences
 
 <card>/Users/<v>user_name<>/Library/Preferences<>
 
@@ -2858,7 +2952,7 @@ Alias To Home Directory:
 
 
 
-#### User - Apps
+### User - Apps
 
 <card>/Users/<v>user_name<>/Applications<>
 
@@ -2866,7 +2960,7 @@ Alias To Home Directory:
 
 
 
-#### User - App Data / Config
+### User - App Data / Config
 
 <card>/Users/<v>user_name<>/Library/ApplicationSupport<>
 
@@ -2880,9 +2974,7 @@ App Specific:
 
 
 
-
-
-#### User - App Config Directory  (Unix Stile)
+### User - App Config Directory  (Unix Style)
 
 <card>/Users/<v>user_name<>/.config<>
 
@@ -2892,13 +2984,21 @@ App Specific Directory:
 
 
 
-#### User - Library Folder
+### User - Launch Agents / Startup Directory
+
+<cb>/Users/<v>user_name<>/Library/LaunchAgents<>
+
+<cb>$HOME/Library/LaunchAgents<>
+
+
+
+### User - Library Folder
 
 <card>/Users/<v>user_name<>/Library<><>
 
 
 
-#### User - Data
+### User - Data
 
 <card>/Users/<v>user_name<>/Documents<>
 
@@ -2906,7 +3006,7 @@ App Specific Directory:
 
 
 
-#### User - Desktop
+### User - Desktop
 
 <card>/Users/<v>user_name<>/Desktop<>
 
@@ -2914,7 +3014,7 @@ App Specific Directory:
 
 
 
-#### User - Downloads
+### User - Downloads
 
 <card>/Users/<v>user_name<>/Downloads<>
 
@@ -2922,7 +3022,7 @@ App Specific Directory:
 
 
 
-#### User - Keyboard Layouts
+### User - Keyboard Layouts
 
 <card>/Users/<v>user_name<>/Library/Keyboard Layouts<>
 
@@ -2930,7 +3030,7 @@ App Specific Directory:
 
 
 
-#### User - Startup Scripts
+### User - Startup Scripts
 
 <card>/Users/<v>user_name<>/Library/LaunchAgents<>
 
@@ -2945,6 +3045,10 @@ App Specific Directory:
 ### User - Apps - iOS Backups
 
 <card>~/Library/ApplicationSupport/MobileSync/Backup<>
+
+
+
+## App Directories
 
 
 
@@ -3009,6 +3113,8 @@ Device Backups:
 File:
 
 <card><l>/usr/bin/python<><>
+
+Notes: Removed from MacOS 12 (Montery) (2022)
 
 
 
