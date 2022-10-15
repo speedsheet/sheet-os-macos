@@ -322,6 +322,8 @@ Command-line
 ### File - Duplicate
 
 <card>Command ⌘ + D<>
+@
+@ clone
 
 
 ### File - New Folder
@@ -650,11 +652,41 @@ Sets caps for the next letter.
 
 
 
+# App - Activity Monitor
+
+
+### Activity Monitor - Show CPU History
+
+<card>Menu:
+
+-> Window
+-> CPU History<>
+@
+@ mini view, summary
+
+
+
 # App - Console
 
 Shows all system logs.
 @
 @ system logs
+
+
+
+# App - Email
+
+
+### Account - Add New Email Address
+
+<card>Menu
+-> Mail
+-> Preferences...
+-> Account (Top Nav)
+-> Select <v>Account Name<>
+
+Email Address Dropdown
+'Edit Email Addresses...'<>
 
 
 
@@ -849,44 +881,140 @@ Unlocked by default when logged in.
 
 
 # App - Launchd / Launchctl
+@
+@ start-up, startup, tasks, background, processes
 
 
-Launchd: What is it:
+## Launchd Fundamentals
+
+### Launchd: What is it:
 A powerful tool that runs OS X tasks and jobs.
 It is like init, cron, ta, init.d(SysVinit), upstart and systems all in one with even more.
 
 Note: Can not be called directly.
 Note: Use launchctl
 
-Dir - OS X Tasks	/System/Library/LaunchDaemons	// Don't touch this.
-		/System/Library/LaunchAgents	// Don't touch this either.
-Dir - System Tasks	/Library/LaunchDaemons/
-Dir - All Logged In User Tasks	/Library/LaunchAgents/
-Dir - User Specific Tasks	~/Library/LaunchAgents/
 
-Task - Add	Create a file in plist format.
-		File name: Reverse domain name notation	// com.example.task-name.plist
 
-Task - Enable	launchctl load -w path/taskName.plist
-Task - Disable	launchctl unload path/taskName.plist
-Task - Start	launchctl start path/taskName.plist
-Tasks - List	launchctl list
+## Launchd Directories, Files
 
-Sample plist - Starts at Login	<?xml version="1.0" encoding="UTF-8"?>
-		<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-		<plist version="1.0">
-			<dict>
-				<key>Label</key>
-				<string>com.user.loginscript</string>
-				<key>Program</key>
-				<string>/path/to/executable/script.sh</string>
-				<key>RunAtLoad</key>
-				<true/>
-			</dict>
-		</plist> 		
 
-	Key - Run all the time	<key>KeepAlive</key>
-	Key - Run At Startup	<key>RunAtLoad</key>
+### Launchd - Directory - OS X Tasks
+
+Don't Touch Either of These:
+
+<cb>/System/Library/LaunchDaemons<>
+
+<cb>/System/Library/LaunchAgents<>
+
+
+
+### Launchd - Directory - System Tasks
+
+<cb>/Library/LaunchDaemons/<>
+
+
+
+### Launchd - Directory - All Logged In User Tasks
+
+<cb>/Library/LaunchAgents/<>
+
+
+
+### Launchd - Directory - User Specific Tasks
+
+<cb>~/Library/LaunchAgents/<>
+
+
+## Launchd Commands
+
+
+
+
+### Launchd - Task - Create
+
+<*>Create a file in plist format.
+? Place in Task Folder (~/Library/LaunchAgents/)?<>
+
+File name: Reverse domain name notation:
+
+<cb>com.example.task-name.plist<>
+@
+@ add
+
+
+
+### Launchd - Task - Delete
+
+<*>Create a file in plist format.<>
+
+File name: Reverse domain name notation:
+
+<cb>com.example.task-name.plist<>
+@
+@ add
+
+
+
+### Launchd - Task - Enable
+
+<cb>launchctl load -w path/taskName.plist<>
+
+
+
+### Launchd - Task - Disable
+
+<cb>launchctl unload path/taskName.plist<>
+
+
+
+### Launchd - Task - Start
+
+<cb>launchctl start path/taskName.plist<>
+
+
+
+### Launchd - Tasks - List
+
+<cb>launchctl list<>
+
+
+
+## Launchd Configurations
+
+
+### Launchd plist - - Sample
+
+Starts at Login:
+
+<cb>\<?xml version="1.0" encoding="UTF-8"?>
+\<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+\<plist version="1.0">
+	\<dict>
+		\<key>Label\</key>
+		\<string>com.user.loginscript\</string>
+		\<key>Program\</key>
+		\<string>/path/to/executable/script.sh\</string>
+		\<key>RunAtLoad\</key>
+		\<true/>
+	\</dict>
+\</plist><>
+
+
+
+### Launchd - plist Setting - Run All The Time
+
+<cb>\<key>KeepAlive\</key><>
+@
+@ key, keepalive
+
+
+
+### Launchd - plist Setting - Run at Startup
+
+<cb>\<key>RunAtLoad\</key><>
+@
+@ key, runatload
 
 
 
@@ -1259,7 +1387,7 @@ The link is created in the current directory.
 <col>-v<><col>Verbose<>
 <col>-E<><col>Extended Attributes (Required for Macs)<><>
 @
-@ folder, mirror, duplicate, sync, rsync --delete, -E
+@ folder, mirror, duplicate, clone, sync, rsync --delete, -E
 
 
 
@@ -1709,26 +1837,46 @@ Seems to work best.
 
 ### Logins - View Latest
 
-last
+<cb>last<>
+@
+@ last
 
-Network - Bound To Port	netstat -anp tcp | grep portNumber
+
+
+### Network - Bound To Port
+
+<cb>netstat -anp tcp | grep <v>port_number<><>
+@
+@ netstat, -anp, tcp
+
 
 
 ### Network - Devices - List
 
-arp -a
+<cb>arp -a<>
+@
+@ arp, -a
+
 
 
 ### Network - Host - Local - Access
 
-hostName.local 				// Access network host in this form.
+<cb><v>host_name<>.local<>
+
+Access network host in this form.
+@
+@ hostname.local, .local
+
 
 
 ### Network - Info
 
-ifconfig
+<cb>ifconfig<>
 
-	networksetup -listallhardwareports
+<cb>networksetup -listallhardwareports<>
+@
+@ ifconfig, ipconfig, networksetup -listallhardwareports
+
 
 
 ### Network - IP Address - Local
@@ -1748,13 +1896,22 @@ Click "Scan"
 
 ### Path - Add To
 
-PATH=$PATH:newPath
+<>PATH=$PATH:<v>newPath<><>
+
 
 
 ### Pictures -> Movie
 
-CommandLine: convert			// imagemagick library.
+Install and use imagemagick library
+
+Command:
+
+<cb>convert<>
+
 See: Convert.Help
+@
+@ convert, imagemagick
+
 
 
 ### Privacy -> Settings
@@ -1780,7 +1937,11 @@ Check "Anywhere"
 
 ### Remote Folder - Windows
 
-smb://server/shareName
+<>smb://<v>server<>/<v>share_name<><>
+@
+@ smb
+
+
 
 ### Screens - Rearrange Setting
 
@@ -1789,21 +1950,26 @@ Settings -> Mission Control -> "Automatically rearrange spaces based on most rec
 \@reorder
 
 
+
 ### Script - Run in new Terminal	
 
-open -a Terminal.app script
+<cb>open -a Terminal.app <v>script<><>
 
 
 ### Script - sh - Run	
 
-sh scriptFileName
+<v>sh <v>script_file_name<><>
+
 
 
 ### Security - Warning Message - App
 
 Note: For when an app repeatedly shows a warning message on opening...
 
-	sudo xattr -d com.apple.quarantine /Applications/AppName.app
+<cb>sudo xattr -d com.apple.quarantine /Applications/<v>AppName<>.app<>
+@
+@ xattr
+
 
 
 ### Server - SSH / Telnet To
@@ -1811,18 +1977,20 @@ Note: For when an app repeatedly shows a warning message on opening...
 See: SSH
 
 
+
 ### Service - Start / Stop
 
 See: Launchctl (above)
 
-sh script - Run	See: Script - Sh - Run
 
 
 ### Spaces - Create
 
 4 Finger Swipe Up
-	Move cursor to top right
-	Click '+'
+Move cursor to top right
+Click '+'
+
+
 
 ### Spaces - Preserve Order
 
@@ -1831,36 +1999,49 @@ Mission Control...
 Uncheck "Automatically rearrange Spaces..."
 
 
+
 ### Spotlight Index Tool
 
-mdutil
+<cb>mdutil<>
+@
+@ mdutil
+
 
 
 ### Spotlight Index Tool - Enable
 
-mdutil -i on /Volumes/DriveName
+<cb>mdutil -i on /Volumes/<v>volume_name<><>
+@
+@ mdutil -i
+
 
 
 ### Spotlight Index Tool - Rebuild
 
-mdutil -E /Volumes/DME-All/*
+<cb>mdutil -E /Volumes/<v>volume_name<>/*<>
+@
+@ mdutil -e
+
 
 
 ### SSH
 
-ssh -i privatekey.pem user@my.server.com
+<cb>ssh -i <v>private_key.pem<> <v>user_name<>@<v>my.server.com<><>
+
 
 
 ### SSH - Local Access - Enable
 
 Apple -> System Preferences -> Sharing
 
-	Check 'Remote Login'
+Check 'Remote Login'
+
 
 
 ### SSH - Local Access - Test (Quick)
 
-sftp localhost
+<v>sftp localhost<>
+
 
 
 ### SMC - Reset
@@ -2222,7 +2403,7 @@ Use APFS, unless compatibility is requiref for older macOses. Then use HFS+.
 
 ### Apple File System (APFS)
 
-The current file system for all Apple devices.
+The current and recommended file system for all Apple devices.
 
 <table><col>Created<><col>2017<>
 <col> <>
@@ -2239,6 +2420,8 @@ watchOS 3.2 (and greater)<>
 
 Wiki:
 <l>https://en.wikipedia.org/wiki/Apple_File_System<>
+@
+@ preferred
 
 
 
@@ -2576,10 +2759,19 @@ M1 Mac support.
 Application Bundle Identifier
 
 
+### AFP
+Apple Filing Protocol / AppleTalk Filing Protocol
+
+Wiki:
+<l>https://en.wikipedia.org/wiki/Apple_Filing_Protocol<>
+
+
+### AFS
+Apple File System
+
 
 ### APFS
 Apple File System
-
 
 
 ### HFS
@@ -2960,7 +3152,7 @@ Alias To Home Directory:
 
 
 
-### User - App Data / Config
+### User - App Configuration
 
 <card>/Users/<v>user_name<>/Library/ApplicationSupport<>
 
@@ -2971,16 +3163,17 @@ App Specific:
 <card>/Users/<v>user_name<>/Library/ApplicationSupport/<v>app_name<><>
 
 <card>$HOME/Library/ApplicationSupport/<v>app_name<><>
+@
+@ data
 
 
 
 ### User - App Config Directory  (Unix Style)
 
-<card>/Users/<v>user_name<>/.config<>
-
-App Specific Directory:
-
-<card>/Users/<v>user_name<>/.config/<v>app_name<><>
+<card>/Users/<v>user_name<>/.config
+/Users/<v>user_name<>/.config/<v>app_name<><>
+@
+@ app.data
 
 
 
@@ -2990,11 +3183,15 @@ App Specific Directory:
 
 <cb>$HOME/Library/LaunchAgents<>
 
+Stores user account settings, preferences, app support files, caches and other data used by applications.
+
 
 
 ### User - Library Folder
 
 <card>/Users/<v>user_name<>/Library<><>
+
+Stores
 
 
 
@@ -3142,9 +3339,45 @@ Messages	~/Library/Messages
 
 # Reference - Application Bundle Identifiers
 
-OmniOutliner	com.omnigroup.OmniOutliner5.MacAppStore
-Text Edit	com.apple.TextEdit
-VLC	org.videolan.vlc
+OmniOutliner			com.omnigroup.OmniOutliner5.MacAppStore
+Sublime				com.sublimetext.4
+Text Edit				com.apple.TextEdit
+Visual Studio Code		com.microsoft.VSCode
+VLC					org.videolan.vlc
+
+
+
+# System Settings
+
+
+### Disk Warning - Disable
+
+<cb>sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd<>
+
+
+### Disk Warning - Enable
+
+<cb>sudo defaults delete /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification && sudo pkill diskarbitrationd<>
+
+
+### Dock - Hide Fast
+
+<cb>defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock<>
+
+
+### Dock - Hide Normal
+
+<cb>defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock<>
+
+
+### Screen Capture - to JPG
+
+<cb>defaults write com.apple.screencapture type jpg<>
+
+
+### Screen Capture - to PNG
+
+<cb>defaults write com.apple.screencapture type png<>
 
 
 
