@@ -6,9 +6,16 @@ Covers MacOS related topics.
 
 # Summary
 
+
 ### Path Separator
 
 <cb>:<>
+
+
+
+### System Font
+
+<cb>SF Pro<>
 
 
 # Shortcuts
@@ -21,48 +28,58 @@ These shortcuts apply to all applications.
 @ all
 
 
-### Edit - Delete
+### Edit - Delete Character - Previous
 
 <card>Delete<>
 
 Deletes the previous letter.
+@
+@ backwards
 
 
-### Edit - Delete Forward / Right
+### Edit - Delete Character - Next
 
 <card>fn + Delete<>
 
 Deletes next letter.
+@
+@ forward, right
 
 
-### Edit - Delete Word 
+### Edit - Delete Word - Previous
 
-<card>Option ⌥ + fn + Delete<>
+<card>Option ⌥ + Delete<>
 
 Deletes the previous word.
+@
+@ backwards
 
 
-### Edit - Delete Word (Next)
+### Edit - Delete Word - Next
 
 <card>Option ⌥ + fn + Delete<>
 
 Deletes the next word.
+@
+@ forward, right
 
 
-### Edit - Delete Line To Start
+### Edit - Delete Line - To Start
 
 <card>Command ⌘ + Delete<>
 
 Deletes to the start of the line.
 @
-@ beginning
+@ beginning, backward, previous
 
 
-### Edit - Delete Line To End
+### Edit - Delete Line - To End
 
 <card>Command ⌘ + fn + Delete<>
 
 Deletes to the end of the line.
+@
+@ forward
 
 
 ### Edit - Copy
@@ -132,18 +149,18 @@ Deletes to the end of the line.
 @ cursor
 
 
-### Move - To Page Top
+### Move - To Document Top
 
 <card>Command ⌘ + Arrow Up<>
 @
-@ cursor, start
+@ cursor, start, page
 
 
-### Move - To Page Bottom	
+### Move - To Document Bottom	
 
 <card>Command ⌘ + Arrow Down<>
 @
-@ cursor, end
+@ cursor, end, page
 
 
 ### Select - All
@@ -179,18 +196,18 @@ Deletes to the end of the line.
 @ cursor
 
 
-### Select - To Page Top
+### Select - To Document Top
 
 <card>Shift + Command ⌘ + Arrow Up<>
 @
-@ cursor, start
+@ cursor, start, page
 
 
-### Select - To Page Bottom	
+### Select - To Document Bottom	
 
 <card>Shift + Command ⌘ + Arrow Down<>
 @
-@ cursor, end
+@ cursor, end, page
 
 
 ### App - App Preferences
@@ -206,6 +223,15 @@ Deletes to the end of the line.
 ### App - App Kill
 
 <card>Option ⌥ + Command ⌘ + Esc<>
+
+
+### App - Goto Search Field
+
+<card>Command ⌘ + F<>
+
+Sometimes:
+
+<card>Option ⌥ + Command ⌘ + F<>
 
 
 ### App - Window Close
@@ -368,7 +394,7 @@ Or
 
 <card>Command ⌘ + Control ⌃ + Shift + 3<>
 @
-@ copy
+@ copy, screen shot
 
 
 ### Print Screen - Copy To File
@@ -377,14 +403,14 @@ Or
 
 Copys to desktop
 @
-@ copy
+@ copy, screen shot
 
 
 ### Print Screen - Copy Area to Clipboard
 
 <card>Command ⌘ + Control ⌃ + Shift + 4<>
 @
-@ copy
+@ copy, screen shot
 
 
 ### Print Screen - Copy Area to File
@@ -393,7 +419,7 @@ Copys to desktop
 
 Copys to desktop.
 @
-@ copy
+@ copy, screen shot
 
 
 ### Print Screen - Copy Window To File
@@ -404,7 +430,7 @@ Select Window With Mouse<>
 
 Copys to desktop.
 @
-@ copy
+@ copy, screen shot
 
 
 ### Siri
@@ -434,6 +460,14 @@ Copys to desktop.
 Toggles to and from full screen mode.
 
 
+### Zoom - Enable / Disable
+
+<card>Control ^ + Command ⌘ + ]<>
+
+Toggles the zoom view.
+@
+@ magnify magnification, toggle
+
 
 ## Mouse
 
@@ -448,6 +482,11 @@ Displays all available audio sources.
 ### Click - Right Click
 
 <card>Press down 2 fingers side by side.<>
+
+
+### Click - Right Click (2)
+
+<card>Control ^ + Click<>
 
 
 ### Click - Right Click Drag
@@ -668,6 +707,8 @@ Sets caps for the next letter.
 
 # App - Console
 
+<cb>Console<>
+
 Shows all system logs.
 @
 @ system logs
@@ -675,6 +716,8 @@ Shows all system logs.
 
 
 # App - Email
+
+<cb>Mail<>
 
 
 ### Account - Add New Email Address
@@ -807,6 +850,18 @@ Mouse:
 Drag source folder onto the target folder while holding the [ Option ⌥ ] key.
 
 
+### Finder - Goto Search Field
+
+<card>Option ⌥ + Command ⌘ + F<>
+
+
+### Finder - Open New Search Here
+
+<card>Command ⌘ + F<>
+
+Opens a new search in a new tab, searching the current location.
+
+
 ### Finder - Show Path
 
 <card>Menu:
@@ -918,12 +973,17 @@ Don't Touch Either of These:
 ### Launchd - Directory - All Logged In User Tasks
 
 <cb>/Library/LaunchAgents/<>
+@
+@ launch script, .plist, items, startup, start up
 
 
 
 ### Launchd - Directory - User Specific Tasks
 
 <cb>~/Library/LaunchAgents/<>
+@
+@ launch script, .plist, items, startup, start up
+
 
 
 ## Launchd Commands
@@ -934,7 +994,8 @@ Don't Touch Either of These:
 ### Launchd - Task - Create
 
 <*>Create a file in plist format.
-? Place in Task Folder (~/Library/LaunchAgents/)?<>
+Place in Task Folder (e.g. ~/Library/LaunchAgents)<>
+
 
 File name: Reverse domain name notation:
 
@@ -946,11 +1007,13 @@ File name: Reverse domain name notation:
 
 ### Launchd - Task - Delete
 
-<*>Create a file in plist format.<>
+<*>Stop the task.
+Delete the plist file.<>
 
-File name: Reverse domain name notation:
+Example:
 
-<cb>com.example.task-name.plist<>
+<cb>launchctl stop <v>~/Library/AunchAgents/com.example.task-name.plist<>
+rm <v>~/Library/AunchAgents/com.example.task-name.plist<><>
 @
 @ add
 
@@ -958,19 +1021,25 @@ File name: Reverse domain name notation:
 
 ### Launchd - Task - Enable
 
-<cb>launchctl load -w path/taskName.plist<>
+<cb>launchctl load -w <v>path<>/<v>taskName.plist<><>
 
 
 
 ### Launchd - Task - Disable
 
-<cb>launchctl unload path/taskName.plist<>
+<cb>launchctl unload <v>path<>/<v>taskName.plist<><>
 
 
 
 ### Launchd - Task - Start
 
-<cb>launchctl start path/taskName.plist<>
+<cb>launchctl start <v>path<>/<v>taskName.plist<><>
+
+
+
+### Launchd - Task - Stop
+
+<cb>launchctl stop <v>path<>/<v>taskName.plist<><>
 
 
 
@@ -1082,12 +1151,16 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx<>
 ### Terminal - Shell - Set Bash
 
 <card>chsh -s /bin/bash<>
+@
+@ change, select
 
 
 
 ### Terminal - Shell - Set Zsh
 
 <card>chsh -s /bin/zsh<>
+@
+@ change, select
 
 
 
@@ -1176,6 +1249,14 @@ Example app.bundle.id (application.bundle.identifier):
 
 
 
+### App - Application Certificate - View
+
+<cb>codesign -d -vvv <v>application.app<><>
+@
+@ codesign
+
+
+
 ### App - Recent Docs - Clear
 
 <card>Open App
@@ -1188,6 +1269,8 @@ Menu:
 - or -
 
 <cb>defaults delete <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments<>
+@
+@ previously opened, last opened, documents
 
 
 
@@ -1207,6 +1290,8 @@ Example app.bundle.id (application.bundle.identifier):
 <cb>com.apple.TextEdit<>
 
 To Get Identifier, See: <l#>App - Application Bundle Identifier - Get<>
+@
+@ previously opened, last opened, documents
 
 
 
@@ -1217,6 +1302,8 @@ defaults delete <v>app.bundle.identifier<>.LSSharedFileList RecentDocuments<>
 
 
 To Get Identifier, See: <l#>App - Application Bundle Identifier - Get<>
+@
+@ previously opened, last opened, documents
 
 
 
@@ -1247,6 +1334,28 @@ Menu: View -> Message -> Raw Source
 ### Apple Script - Run
 
 osascript
+
+
+
+### Audio File - Convert
+
+<cb>afconvert <v>...<><>
+
+Sample:
+
+<cb>afconvert -v -f "mp4f" -d "aac@44100" /System/Library/Sounds/Basso.aiff basso_converted.mp4<>
+@
+@ wav, mp3, aiff
+@ afconvert
+
+
+
+### Audio File - Play
+
+<cb>afplay <v>file_name<><>
+@
+@ wav, mp3, aiff
+@ afplay
 
 
 ### Audio - Record
@@ -1381,11 +1490,19 @@ The link is created in the current directory.
 
 <cb>rsync -avE --delete <v>source_dir<>/ <v>target_parent_dir<>/<>
 
+
+Mirrors the source directory into the target directory.
+
+
 <table><col><b>Option<><><col><b>Purpose<><>
 <col> <>
 <col>-a<><col>Archive Mode<>
+<col>-E<><col>Extended Attributes (Required for Macs)<>
 <col>-v<><col>Verbose<>
-<col>-E<><col>Extended Attributes (Required for Macs)<><>
+<col> <>
+<col>--delete<><col>Delete Non Matching Target Files<>
+<col>--ignore-errors<><col>Ignore Errors<>
+<col>--progress<><col>Show Progress<><>
 @
 @ folder, mirror, duplicate, clone, sync, rsync --delete, -E
 
@@ -1471,15 +1588,23 @@ Terminal:
 
 
 
-### DVD - Create
+### Drive - Show Block Devices
 
-[ Researching ]
+<cb>diskutil list<>
+
+
+Lists all block devices including those that are connected but not mounted.
+@
+@ list, get
+@ diskutil list
 
 
 
 ### File - Compare
 
-diff -q file1 file2
+<cb>diff <v>file_1<> <v>file_2<><>
+@
+@ diff, difference, files
 
 
 
@@ -1585,6 +1710,7 @@ Deletes the quarantine attribute on a file.
 @
 @ xattr, -d, com.apple.quarantine
 @ file, delete, download
+@ damaged, move to trash
 
 
 
@@ -1632,6 +1758,8 @@ mdfind "<v>search string<>" 			<#>// Uses Spotlight<><>
 ### Files - Quarantine - Disable
 
 <cb>defaults write com.apple.LaunchServices LSQuarantine -bool false<>
+@
+@ damaged, open, move to trash
 
 
 
@@ -1914,6 +2042,15 @@ See: Convert.Help
 
 
 
+### Print Job History - Clear
+
+<cb>cancel -a -x<>
+
+
+Deletes contennts of <c>/var/spools/cups<>
+
+
+
 ### Privacy -> Settings
 
 System Preferences -> Spotlight
@@ -1922,17 +2059,36 @@ uncheck "Spotlight Suggestions"
 uncheck "Bing Web Searches"
 
 
+
+### Quarantine - Disable
+
+From Terminal:
+
+<cb>sudo defaults write com.apple.LaunchServices LSQuarantine -bool NO<>
+
+Then reboot.
+
+<m>Untested.<>
+
+
+
 ### Quarantine - Relax
 
 From Terminal:
-sudo spctl --master-disable 		// Restores "Allow apps downloaded from:" "Anywhere" option.
 
-System Preferences -> Security & Privacy
+<cb>sudo spctl --master-disable<>
+(Restores "Allow apps downloaded from:" "Anywhere" option)
+
+<card>System Settings... ->
+Privacy & Security ->
 Tab: General
 
 Unlock
 
-Check "Anywhere"
+Check "Anywhere"<>
+
+(<m>Outdated since Ventura<>)
+
 
 
 ### Remote Folder - Windows
@@ -2076,6 +2232,18 @@ Restart the Mac.
 Shut down the Mac.
 Hold Shift + Control + Option + Power Button for 10 seconds.
 Restart the Mac.
+
+
+
+### System - Boot Up - Show Log Messages
+
+<cb>sudo nvram boot-args="-v"<>
+
+Shows all log messages as your Mac boots.
+
+Run this command from the terminal. Reboot.
+@
+@ startup, bootup, logs
 
 
 
@@ -2379,14 +2547,34 @@ Password change, System Utils
 
 ### Boot - Start - Safe Mode
 
-<card>Shift<>
+<card>shift<>
 
-
-### Boot - Start - Single User Mode
+Intel Mac + T2:
 
 <card>Command ⌘ + S<>
 
-Can be used to access
+
+Starts up the Mac without starting any services or apps.
+
+
+### Boot - Start - Single User Mode / Terminal
+
+Apple Silicon:
+
+<card>Press and Hold Power Button<>
+
+Intel Mac + T2:
+
+<card>Command ⌘ + R<>
+
+Intel Mac, No T2:
+
+<card>Command ⌘ + S<>
+
+Can be used to access the terminal.
+@
+@ cli, command line interface
+
 
 
 ### Boot - Start - Verbose Mode
@@ -2459,190 +2647,6 @@ Wiki:
 <col>Caps Lock<><col>⇪<><><>
 @
 @ apple, command, option, control, shift, caps lock, characters
-
-
-
-
-
-# Reference - Useful MacOS Apps
-
-Apps you can download for the mac
-
-
-### Alinof Timer
-
-Timer App
-
-
-### AquaTerm
-
-Graphics Terminal.
-Displays vector graphics, text, images.
-
-
-### balenaEtcher
-
-Copies IMG files to devices such as SD Cards
-
-
-### Boxer
-
-DOS Emulator
-
-
-### Camtasia
-
-Video Tutorial Creator
-
-
-### Charles
-
-Web Debugging Proxy
-
-
-### ControllerMate
-
-X-Keys Keypad Programmer
-
-
-### Craft
-
-A document
-
-
-### Downcast
-
-Podcast player
-
-
-### Duo
-
-A developer tool to help create web applications.
-
-Shows your web page in 2 different sized windows.
-
-
-### Fuse
-
-Open Source NTFS driver.
-@
-@ Windows
-
-
-### Fuse
-
-ZX Spectrum Emulator
-
-
-### Giphy / Giphy Capture
-
-Video Capture to GIF creator.
-@
-@ gif creator
-
-
-### Inkscape
-
-Open source vector graphics editor.
-
-Edits Adobe Illustrator files.
-@
-@ graphics editor
-
-
-### Kite
-
-Not recommended.
-AI Based Program Helper.
-
-
-### MacDown
-
-Mac Mark Down Viewer/Editor	// .md Markdown, Markup
-
-
-### Paletro
-
-Search App's Menu for Actions(Shift + ⌘ + P)
-
-
-### PDFPenPro
-
-PDF Editor
-
-
-### Prepo
-
-iOS Icon Resizer Utility
-
-
-
-### Smart Gif Maker
-
-Creates gifs automatically from videos.
-Has very basic frame editing features (delete, set duration).
-
-
-### Sonic Pi
-
-Music Programming App
-
-
-### Swinsian
-
-iTunes Replacement Music Player
-
-
-### Tabby
-
-A terminal application with a nice GUI.
-
-
-### TeXWorks
-
-Latex Editor
-
-
-### Transmission
-
-Bittorrent client.
-@
-@ bit torrent
-
-
-### TunnelBrick
-
-VPN Software (Works with OpenVPN / Asus
-
-
-### Typora
-
-Minimalist markdown editor.
-
-
-### Ukelele
-
-Keyboard Layout Editor
-
-
-### USB Overdrive
-
-Keyboard / Mouse Reprogramming Utility
-
-
-### Vice
-
-Commodore 64 Emulator
-
-
-### Viscosity
-
-Open Source VPN
-
-
-### XCTU
-
-Tool for programming rf devices like Zigbee controllers.
 
 
 
@@ -2748,11 +2752,30 @@ M1 Mac support.
 2021.10.25
 
 
+### MacOS 13 (Ventura)
 
-# Glossary
+2022.10.23
 
 
-## Acronyms
+
+# Reference - Online Help
+@
+@ links, links-only, online-only
+
+
+### Online Doc - MacOS Keyboard Shortcuts
+
+<l>https://support.apple.com/en-us/HT201236<>
+
+A list of standard MacOS keyboard shortcuts.
+@
+@ standard, std
+
+
+
+# Acronyms
+@
+@ acronyms-only, glossary
 
 
 ### ABI
@@ -2778,12 +2801,16 @@ Apple File System
 Hierarchical File System.
 
 Also Called: Mac OS Standard
+@
+@ hsf
 
 
 ### HFS+
 Hierarchical File System Plus
 
 Also Called: Mac OS Extended
+@
+@ hsf+
 
 
 ### NVRAM
@@ -2806,7 +2833,9 @@ Service Message Block
 Universtal Type Identifier
 
 
-## Terms
+# Terms
+@
+@ glossary, terms-only
 
 
 ### Alias
@@ -2904,6 +2933,8 @@ Requires both devices use the same iCloud account.
 
 Official Apple Doc:
 <l>https://support.apple.com/en-us/HT210380<>
+@
+@ screen sharing
 
 
 ### Spaces
@@ -3105,7 +3136,9 @@ User Startup Items:
 
 
 
-## System Files / Directory
+## System Files / Directories
+@
+@ directory, folders
 
 
 
@@ -3115,10 +3148,19 @@ User Startup Items:
 
 
 
+#### System - Print Job History
+
+<cb>/var/spools/cups<>
+@
+@ /var/spools/cups, var spools cups
+
+
 
 ## User Files / Directories
 
 <card><l>/Users<><>
+@
+@ directory, folders
 
 
 
@@ -3141,6 +3183,8 @@ Alias To Home Directory:
 <card>/Users/<v>user_name<>/Library/Preferences<>
 
 <card>$HOME/Library/Preferences<>
+@
+@ /library/preferences, library preferences
 
 
 
@@ -3152,28 +3196,44 @@ Alias To Home Directory:
 
 
 
-### User - App Configuration
-
-<card>/Users/<v>user_name<>/Library/ApplicationSupport<>
-
-<card>$HOME/Library/ApplicationSupport<>
-
-App Specific:
-
-<card>/Users/<v>user_name<>/Library/ApplicationSupport/<v>app_name<><>
-
-<card>$HOME/Library/ApplicationSupport/<v>app_name<><>
-@
-@ data
-
-
-
 ### User - App Config Directory  (Unix Style)
 
 <card>/Users/<v>user_name<>/.config
 /Users/<v>user_name<>/.config/<v>app_name<><>
 @
 @ app.data
+
+
+
+### User - Application Support
+
+<card>/Users/<v>user_name<>/Library/Application Support<>
+
+<card>$HOME/Library/ApplicationSupport<>
+
+App Specific:
+
+<card>/Users/<v>user_name<>/Library/Application Support/<v>app_name<><>
+
+<card>$HOME/Library/Application Support/<v>app_name<><>
+@
+@ data, configuration, applications
+
+
+
+### User - Application Support (Sandboxed)
+
+<card>/Users/<v>user_name<>/Library/Containers<>
+
+<card>$HOME/Library/Containers<>
+
+App Specific:
+
+<card>/Users/<v>user_name<>/Library/Containers/<v>app_name<><>
+
+<card>$HOME/Library/Containers/<v>app_name<><>
+@
+@ data, configuration, containers, applications
 
 
 
@@ -3373,11 +3433,15 @@ VLC					org.videolan.vlc
 ### Screen Capture - to JPG
 
 <cb>defaults write com.apple.screencapture type jpg<>
+@
+@ shot
 
 
 ### Screen Capture - to PNG
 
 <cb>defaults write com.apple.screencapture type png<>
+@
+@ shot
 
 
 
